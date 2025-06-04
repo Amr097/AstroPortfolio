@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Test from '../pages/test.astro';
+import SpeedDial from '../components/ui/SpeedDial/SpeedDial.astro';
 ---
 
 <!doctype html>
@@ -13,9 +14,14 @@ import Test from '../pages/test.astro';
     <title>Amr Abdelghany - Home</title>
   </head>
   <body class="bg-base relative flex flex-col text-white">
-    <div class="bg-pattern absolute inset-0 z-1 bg-size-[0.5rem] bg-blend-multiply"></div>
+    <!-- Pattern -->
+    <div class="bg-pattern absolute inset-0 z-0 bg-size-[0.5rem] bg-blend-multiply"></div>
     <!-- Overlay -->
-    <div class="from-base via-base/95 to-base absolute inset-0 z-10 bg-gradient-to-t"></div>
+    <div class="from-base via-base/95 to-base absolute inset-0 z-0 bg-gradient-to-t"></div>
+
+    <!-- Speed Dial Component -->
+    <SpeedDial />
+
     <slot />
   </body>
 
