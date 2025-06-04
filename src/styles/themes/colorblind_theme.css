@@ -1,0 +1,19 @@
+/* Colorblind-Friendly Theme */
+[data-theme='colorblind'] {
+  --theme-bg-base: rgb(255, 255, 255);
+  --theme-bg-canvas: rgb(248, 249, 250);
+  --theme-bg-layer-1: rgb(234, 238, 243);
+  --theme-bg-layer-2: rgb(255, 255, 255);
+  --theme-bg-alt: rgb(249, 249, 249);
+  --theme-bg-inverse: rgb(17, 17, 17);
+
+  --theme-text-base: rgb(0, 0, 0);
+  --theme-text-muted: rgb(102, 102, 102);
+  --theme-text-inverse: rgb(255, 255, 255);
+  --theme-text-accent: rgb(0, 102, 204); /* Safe blue */
+  --theme-text-danger: rgb(255, 153, 0); /* Orange instead of red */
+
+  --theme-btn-primary-bg: rgb(0, 102, 204);
+  --theme-btn-primary-bg-hover: rgb(0, 86, 172);
+  --theme-btn-primary-text: rgb(255, 255, 255);
+}

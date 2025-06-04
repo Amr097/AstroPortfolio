@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="w-screen h-screen bg-base">
+    <!-- Theme Toggle Buttons -->
+    <div class="fixed top-4 right-4 flex gap-2">
+      <button 
+        id="light-btn"
+        class="px-4 py-2 bg-white text-black border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+      >
+        Light
+      </button>
+      <button 
+        id="dark-btn"
+        class="px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded hover:bg-gray-700 transition-colors"
+      >
+        Dark
+      </button>
+      <button 
+        id="colorblind-btn"
+        class="px-4 py-2 bg-blue-600 text-white border border-blue-500 rounded hover:bg-blue-700 transition-colors"
+      >
+        Colorblind
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex items-center justify-center h-full">
+      <div class="text-center">
+        <h1 class="text-6xl font-bold mb-4" style="color: var(--theme-text-base);">
+          HIIII
+        </h1>
+        <p class="text-xl" style="color: var(--theme-text-muted);">
+          Try the theme buttons in the top right!
+        </p>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script>
+  // Type definitions
+  type Theme = 'light' | 'dark' | 'colorblind';
+  
+  // Theme toggle functionality
+  function setTheme(theme: Theme): void {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    // Update button states
+    const buttons = document.querySelectorAll<HTMLElement>('[id$="-btn"]');
+    buttons.forEach((btn: HTMLElement) => {
+      btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
+    });
+    
+    const activeButton = document.getElementById(`${theme}-btn`);
+    if (activeButton) {
+      activeButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+    }
+  }
+
+  // Initialize theme on page load
+  function initTheme(): void {
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    if (savedTheme && ['light', 'dark', 'colorblind'].includes(savedTheme)) {
+      setTheme(savedTheme);
+    } else {
+      // Default to system preference detection (no data-theme attribute)
+      // Your CSS media queries will handle this automatically
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const defaultTheme: Theme = systemDark ? 'dark' : 'light';
+      const defaultButton = document.getElementById(`${defaultTheme}-btn`);
+      if (defaultButton) {
+        defaultButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+      }
+    }
+  }
+
+  // Event listeners
+  document.addEventListener('DOMContentLoaded', (): void => {
+    initTheme();
+    
+    const lightBtn = document.getElementById('light-btn');
+    const darkBtn = document.getElementById('dark-btn');
+    const colorblindBtn = document.getElementById('colorblind-btn');
+    
+    if (lightBtn) lightBtn.addEventListener('click', () => setTheme('light'));
+    if (darkBtn) darkBtn.addEventListener('click', () => setTheme('dark'));
+    if (colorblindBtn) colorblindBtn.addEventListener('click', () => setTheme('colorblind'));
+  });
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e: MediaQueryListEvent): void => {
+    // Only auto-switch if user hasn't manually selected a theme
+    if (!localStorage.getItem('theme')) {
+      const defaultTheme: Theme = e.matches ? 'dark' : 'light';
+      const buttons = document.querySelectorAll<HTMLElement>('[id$="-btn"]');
+      buttons.forEach((btn: HTMLElement) => {
+        btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
+      });
+      
+      const defaultButton = document.getElementById(`${defaultTheme}-btn`);
+      if (defaultButton) {
+        defaultButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+      }
+    }
+  });
+</script>
+
