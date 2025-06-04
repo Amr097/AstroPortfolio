@@ -1,6 +1,8 @@
 /* Dark mode - automatically applied when user prefers dark mode */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
+    --theme-bg-pattern: url('/dark-pattern.svg');
+
     --theme-bg-base: rgb(18, 18, 18);
     --theme-bg-canvas: rgb(26, 26, 26);
     --theme-bg-layer-1: rgb(42, 42, 42);
@@ -21,6 +23,8 @@
 }
 
 [data-theme='dark'] {
+  --theme-bg-pattern: url('/dark-pattern.svg');
+
   --theme-bg-base: rgb(18, 18, 18);
   --theme-bg-canvas: rgb(26, 26, 26);
   --theme-bg-layer-1: rgb(42, 42, 42);

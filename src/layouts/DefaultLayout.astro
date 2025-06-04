@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import Test from '../pages/test.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Amr Abdelghany - Home</title>
+  </head>
+  <body class="bg-base relative flex flex-col text-white">
+    <div class="bg-pattern absolute inset-0 z-1 bg-size-[0.5rem] bg-blend-multiply"></div>
+    <!-- Overlay -->
+    <div class="from-base via-base/95 to-base absolute inset-0 z-10 bg-gradient-to-t"></div>
+    <slot />
+  </body>
+
+  <!-- Footer -->
+  <footer class="mt-auto inline-block w-full py-8">
+    <p class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400">
+      © 2025 • Built using
+      <a href="https://astro.build" class="text-orange-400 hover:underline">Astro</a> by Amr Abdelghany
+    </p>
+  </footer>
+
+  <Test />
+</html>

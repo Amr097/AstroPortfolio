@@ -1,7 +1,10 @@
+@import './base_theme.css';
 @import './light_theme.css';
 @import './dark_theme.css';
 @import './colorblind_theme.css';
 
 @theme {
-  --color-base: var(--theme-text-danger);
+  --background-image-pattern: var(--theme-bg-pattern);
+
+  --color-base: var(--theme-bg-base);
 }

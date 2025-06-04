@@ -1,111 +1,163 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Card from '../components/Card.astro';
+import SocialButton from '../components/SocialButton.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
-<Layout>
-  <div class="w-screen h-screen bg-base">
-    <!-- Theme Toggle Buttons -->
-    <div class="fixed top-4 right-4 flex gap-2">
-      <button 
-        id="light-btn"
-        class="px-4 py-2 bg-white text-black border border-gray-300 rounded hover:bg-gray-100 transition-colors"
-      >
-        Light
-      </button>
-      <button 
-        id="dark-btn"
-        class="px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded hover:bg-gray-700 transition-colors"
-      >
-        Dark
-      </button>
-      <button 
-        id="colorblind-btn"
-        class="px-4 py-2 bg-blue-600 text-white border border-blue-500 rounded hover:bg-blue-700 transition-colors"
-      >
-        Colorblind
-      </button>
-    </div>
+<DefaultLayout>
+  <div class="container mx-auto px-4 py-8">
+    <!-- Grid Layout -->
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      <!-- Welcome Card - Spans 2 columns -->
+      <!-- <Card class="md:col-span-2">
+        <div class="flex flex-col items-center gap-6 md:flex-row">
+          <div class="flex-1">
+            <p class="mb-2 text-sm text-gray-400">Welcome</p>
+            <h1 class="mb-4 text-xl">
+              Hi, I'm <span class="text-blue-400">Gianmarco Cavallo</span>, a software developer
+              with strong focus on the user experience, animations and micro interactions.
+            </h1>
+            <p class="mb-6 text-gray-300">
+              Feel free to reach out to me if you have any projects in mind, or just to say hello.
+            </p>
 
-    <!-- Main Content -->
-    <div class="flex items-center justify-center h-full">
-      <div class="text-center">
-        <h1 class="text-6xl font-bold mb-4" style="color: var(--theme-text-base);">
-          HIIII
-        </h1>
-        <p class="text-xl" style="color: var(--theme-text-muted);">
-          Try the theme buttons in the top right!
+            <div class="mb-4 flex gap-3">
+              <SocialButton href="https://github.com" icon="fab fa-github" label="GitHub" />
+              <SocialButton href="https://linkedin.com" icon="fab fa-linkedin" label="LinkedIn" />
+              <SocialButton href="https://dribbble.com" icon="fab fa-dribbble" label="Dribbble" />
+              <SocialButton
+                href="mailto:contact@example.com"
+                icon="fas fa-envelope"
+                label="Email"
+              />
+            </div>
+
+            <button
+              class="rounded-lg bg-white px-6 py-2 font-medium text-black transition-colors hover:bg-gray-200"
+            >
+              Book a call
+            </button>
+          </div>
+
+          <div class="flex h-48 w-48 items-center justify-center rounded-full bg-gray-800">
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Gianmarco Cavallo"
+              class="h-full w-full rounded-full object-cover"
+            />
+          </div>
+        </div>
+      </Card> -->
+
+      <!-- About Me Card -->
+      <!-- <Card>
+        <h2 class="mb-4 text-lg font-semibold">About me</h2>
+        <p class="mb-4 text-sm text-gray-300">
+          Hi, I'm Gianmarco, a front-end software developer from Italy.
         </p>
-      </div>
+        <p class="mb-4 text-sm text-gray-300">My primary tools of choice includes:</p>
+        <ul class="mb-4 space-y-1 text-sm text-gray-300">
+          <li>• JavaScript</li>
+          <li>• React</li>
+          <li>• SolidJS</li>
+          <li>• Astro</li>
+          <li>• Svelte</li>
+          <li>• Node.js</li>
+        </ul>
+        <p class="text-xs text-gray-400">
+          Beyond coding, I'm passionate about design, illustration, animation and 3D modeling and
+          traveling. An unusual hobby of mine is collecting vintage passports, they're interesting
+          pieces of history to me.
+        </p>
+      </Card> -->
+
+      <!-- Contact Card -->
+      <!-- <Card>
+        <h2 class="mb-4 text-lg font-semibold">Let's start working together!</h2>
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-gray-400">Contact Details</p>
+            <p class="text-sm text-gray-300">contact@gianmarcocavallo.com</p>
+            <p class="text-sm text-gray-300">Italy</p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">Socials</p>
+            <div class="space-y-1 text-sm text-gray-300">
+              <p>LinkedIn</p>
+              <p>Github</p>
+              <p>Medium</p>
+              <p>Discord</p>
+            </div>
+          </div>
+        </div>
+      </Card> -->
+
+      <!-- Now Card -->
+      <!-- <Card>
+        <div class="mb-2 flex items-center gap-2">
+          <div class="h-2 w-2 rounded-full bg-red-500"></div>
+          <h3 class="font-semibold">Now</h3>
+        </div>
+        <p class="text-sm text-gray-400">What's that?</p>
+        <p class="text-sm text-gray-300">Currently working fulltime</p>
+      </Card> -->
+
+      <!-- Design Works Card -->
+      <!-- <Card href="/design-works" hasArrow={true}>
+        <h3 class="text-lg font-semibold">Design Works</h3>
+        <div class="mt-4 h-20 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 opacity-80">
+        </div>
+      </Card> -->
+
+      <!-- Playground Card -->
+      <!-- <Card href="/playground" hasArrow={true}>
+        <h3 class="text-lg font-semibold">Playground</h3>
+      </Card> -->
+
+      <!-- Blog Card -->
+      <!-- <Card href="/blog" hasArrow={true}>
+        <h3 class="text-lg font-semibold">Blog</h3>
+      </Card> -->
+
+      <!-- Works Card -->
+      <!-- <Card>
+        <h3 class="mb-4 text-lg font-semibold">Works</h3>
+        <div class="-rotate-12 transform font-mono text-xs text-gray-400">
+          WORK IN<br />PROGRESS...
+        </div>
+      </Card> -->
+
+      <!-- Countries Visited Card -->
+      <!-- <Card href="/countries" hasArrow={true}>
+        <h3 class="mb-4 text-lg font-semibold">Countries I visited</h3>
+        <div class="flex h-20 items-center justify-center rounded-lg bg-gray-800">
+          <img src="/placeholder.svg?height=80&width=120" alt="World map" class="opacity-60" />
+        </div>
+      </Card> -->
     </div>
   </div>
-</Layout>
+</DefaultLayout>
 
 <script>
-  // Type definitions
-  type Theme = 'light' | 'dark' | 'colorblind';
-  
-  // Theme toggle functionality
-  function setTheme(theme: Theme): void {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    
-    // Update button states
-    const buttons = document.querySelectorAll<HTMLElement>('[id$="-btn"]');
-    buttons.forEach((btn: HTMLElement) => {
-      btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
-    });
-    
-    const activeButton = document.getElementById(`${theme}-btn`);
-    if (activeButton) {
-      activeButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
-    }
-  }
+  // // Update time every second
+  // function updateTime() {
+  //   const now = new Date();
+  //   const timeString = now.toLocaleTimeString('en-US', {
+  //     hour: '2-digit',
+  //     minute: '2-digit',
+  //     timeZone: 'CET',
+  //     hour12: true
+  //   }) + ' CET';
 
-  // Initialize theme on page load
-  function initTheme(): void {
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
-    if (savedTheme && ['light', 'dark', 'colorblind'].includes(savedTheme)) {
-      setTheme(savedTheme);
-    } else {
-      // Default to system preference detection (no data-theme attribute)
-      // Your CSS media queries will handle this automatically
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const defaultTheme: Theme = systemDark ? 'dark' : 'light';
-      const defaultButton = document.getElementById(`${defaultTheme}-btn`);
-      if (defaultButton) {
-        defaultButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
-      }
-    }
-  }
+  //   const timeElement = document.getElementById('current-time');
+  //   if (timeElement) {
+  //     timeElement.textContent = timeString;
+  //   }
+  // }
 
-  // Event listeners
-  document.addEventListener('DOMContentLoaded', (): void => {
-    initTheme();
-    
-    const lightBtn = document.getElementById('light-btn');
-    const darkBtn = document.getElementById('dark-btn');
-    const colorblindBtn = document.getElementById('colorblind-btn');
-    
-    if (lightBtn) lightBtn.addEventListener('click', () => setTheme('light'));
-    if (darkBtn) darkBtn.addEventListener('click', () => setTheme('dark'));
-    if (colorblindBtn) colorblindBtn.addEventListener('click', () => setTheme('colorblind'));
-  });
-
-  // Listen for system theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e: MediaQueryListEvent): void => {
-    // Only auto-switch if user hasn't manually selected a theme
-    if (!localStorage.getItem('theme')) {
-      const defaultTheme: Theme = e.matches ? 'dark' : 'light';
-      const buttons = document.querySelectorAll<HTMLElement>('[id$="-btn"]');
-      buttons.forEach((btn: HTMLElement) => {
-        btn.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
-      });
-      
-      const defaultButton = document.getElementById(`${defaultTheme}-btn`);
-      if (defaultButton) {
-        defaultButton.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
-      }
-    }
-  });
+  // updateTime();
+  // setInterval(updateTime, 1000);
 </script>
-

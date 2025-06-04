@@ -1,7 +1,6 @@
-/* Manual theme overrides (optional - for user preference toggles) */
-[data-theme='light'] {
+/* Base theme variables (light mode default) */
+:root {
   --theme-bg-pattern: url('/light-pattern.svg');
-
   --theme-bg-base: rgb(255, 255, 255);
   --theme-bg-canvas: rgb(248, 249, 250);
   --theme-bg-layer-1: rgb(241, 243, 245);
