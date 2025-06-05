@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import LightDarkToggle from '../components/ui/LightDarkToggle.astro';
 import ColorModeSelect from '../components/ui/colorModeList/ColorModeSelect.astro';
+import PaddingContainer from '../components/ui/containers/PaddingContainer.astro';
 ---
 
 <!doctype html>
@@ -16,20 +17,22 @@ import ColorModeSelect from '../components/ui/colorModeList/ColorModeSelect.astr
 
   <body class="bg-base relative flex flex-col text-white">
     <!-- Pattern -->
-    <header class="sticky top-0 right-0 z-10 flex items-center justify-end gap-4 py-8">
-      <!-- <ColorModeSelect /> -->
-      <LightDarkToggle />
-    </header>
-    <!-- Pattern -->
-    <div class="bg-pattern absolute inset-0 z-3 bg-size-[0.5rem] bg-blend-multiply"></div>
+    <div class="bg-pattern absolute inset-0 z-0 bg-size-[0.5rem] bg-blend-multiply"></div>
     <!-- Overlay -->
-    <div class="from-base via-base/95 to-base absolute inset-0 z-3 bg-gradient-to-t"></div>
+    <div class="from-base via-base/95 to-base absolute inset-0 z-0 bg-gradient-to-t"></div>
+    <PaddingContainer
+      >\
+      <header class="sticky top-0 right-0 z-10 flex items-center justify-end gap-4 py-8">
+        <!-- <ColorModeSelect /> -->
+        <LightDarkToggle />
+      </header>
 
-    <slot />
+      <slot />
+    </PaddingContainer>
   </body>
 
   <!-- Footer -->
-  <footer class="mt-auto inline-block w-full py-8">
+  <footer class="z-10 mt-auto inline-block w-full py-8">
     <p class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400">
       © 2025 • Built using
       <a href="https://astro.build" class="text-orange-400 hover:underline">Astro</a> by Amr Abdelghany
