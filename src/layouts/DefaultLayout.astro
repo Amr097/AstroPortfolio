@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
-import Test from '../pages/test.astro';
-import SpeedDial from '../components/ui/SpeedDial/SpeedDial.astro';
+import LightDarkToggle from '../components/ui/LightDarkToggle.astro';
+import ColorModeSelect from '../components/ui/colorModeList/ColorModeSelect.astro';
 ---
 
 <!doctype html>
@@ -13,14 +13,17 @@ import SpeedDial from '../components/ui/SpeedDial/SpeedDial.astro';
     <meta name="generator" content={Astro.generator} />
     <title>Amr Abdelghany - Home</title>
   </head>
+
   <body class="bg-base relative flex flex-col text-white">
     <!-- Pattern -->
-    <div class="bg-pattern absolute inset-0 z-0 bg-size-[0.5rem] bg-blend-multiply"></div>
+    <header class="sticky top-0 right-0 z-10 flex items-center justify-end gap-4 py-8">
+      <!-- <ColorModeSelect /> -->
+      <LightDarkToggle />
+    </header>
+    <!-- Pattern -->
+    <div class="bg-pattern absolute inset-0 z-3 bg-size-[0.5rem] bg-blend-multiply"></div>
     <!-- Overlay -->
-    <div class="from-base via-base/95 to-base absolute inset-0 z-0 bg-gradient-to-t"></div>
-
-    <!-- Speed Dial Component -->
-    <SpeedDial />
+    <div class="from-base via-base/95 to-base absolute inset-0 z-3 bg-gradient-to-t"></div>
 
     <slot />
   </body>
@@ -32,6 +35,4 @@ import SpeedDial from '../components/ui/SpeedDial/SpeedDial.astro';
       <a href="https://astro.build" class="text-orange-400 hover:underline">Astro</a> by Amr Abdelghany
     </p>
   </footer>
-
-  <Test />
 </html>

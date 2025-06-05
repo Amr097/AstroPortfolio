@@ -1,0 +1,157 @@
+---
+import DarkIcon from '/dark.svg?raw';
+import LightIcon from '/light.svg?raw';
+---
+
+<!-- Theme Toggle Button -->
+<div class="relative z-10 mx-8">
+  <button
+    id="theme-toggle"
+    class="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full shadow-lg"
+    aria-label="Toggle theme"
+  >
+    <!-- Light Icon (visible in light mode) -->
+    <div
+      id="light-icon"
+      class="absolute inset-0 m-auto h-6 w-6 scale-100 rotate-0 opacity-0 transition-all duration-300"
+    >
+      <Fragment set:html={LightIcon} />
+    </div>
+
+    <!-- Dark Icon (visible in dark mode) -->
+    <div
+      id="dark-icon"
+      class="absolute inset-0 m-auto h-6 w-6 scale-100 rotate-0 opacity-100 transition-all duration-300"
+    >
+      <Fragment set:html={DarkIcon} />
+    </div>
+  </button>
+
+  <script>
+    // Type definitions
+    type Theme = 'light' | 'dark';
+
+    // Get current theme
+    function getCurrentTheme(): Theme {
+      const savedTheme = localStorage.getItem('theme') as Theme | null;
+      if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
+        return savedTheme;
+      }
+      // Default to system preference
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    // Update icon visibility based on theme
+    function updateIcon(theme: Theme): void {
+      const lightIcon = document.getElementById('light-icon');
+      const darkIcon = document.getElementById('dark-icon');
+      const toggleBtn = document.getElementById('theme-toggle');
+
+      if (!lightIcon || !darkIcon || !toggleBtn) return;
+
+      if (theme === 'light') {
+        // Show light icon (to switch to light mode)
+        toggleBtn.classList.remove(
+          'ring-1',
+          'ring-[rgba(39,39,42,.9)]',
+          'bg-[rgba(39,39,42,.9)]',
+          'hover:ring-[hsla(0,0%,100%,.2)]'
+        );
+        lightIcon.classList.remove('opacity-0', 'rotate-90', 'scale-75');
+        lightIcon.classList.add('opacity-100', 'rotate-0', 'scale-100');
+
+        darkIcon.classList.remove('opacity-100', 'rotate-0', 'scale-100');
+        darkIcon.classList.add('opacity-0', '-rotate-90', 'scale-75');
+      } else {
+        // Show dark icon (to switch to dark mode)
+        darkIcon.classList.remove('opacity-0', '-rotate-90', 'scale-75');
+        darkIcon.classList.add('opacity-100', 'rotate-0', 'scale-100');
+        toggleBtn.classList.add(
+          'ring-1',
+          'ring-[rgba(39,39,42,.9)]',
+          'bg-[rgba(39,39,42,.9)]',
+          'hover:ring-[hsla(0,0%,100%,.3)]'
+        );
+
+        lightIcon.classList.remove('opacity-100', 'rotate-0', 'scale-100');
+        lightIcon.classList.add('opacity-0', 'rotate-90', 'scale-75');
+      }
+    }
+
+    // Set theme and update UI
+    function setTheme(theme: Theme): void {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateIcon(theme);
+    }
+
+    // Toggle between themes
+    function toggleTheme(): void {
+      const currentTheme = getCurrentTheme();
+      const newTheme: Theme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    }
+
+    // Initialize theme on page load
+    function initTheme(): void {
+      const currentTheme = getCurrentTheme();
+      setTheme(currentTheme);
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', (): void => {
+      initTheme();
+
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', toggleTheme);
+      }
+    });
+
+    // Listen for system theme changes (only if user hasn't manually set a theme)
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (e: MediaQueryListEvent): void => {
+        // Only auto-switch if user hasn't manually selected a theme
+        if (!localStorage.getItem('theme')) {
+          const systemTheme: Theme = e.matches ? 'dark' : 'light';
+          setTheme(systemTheme);
+        }
+      });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e: KeyboardEvent): void => {
+      // Toggle theme with Ctrl/Cmd + Shift + L
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'L') {
+        e.preventDefault();
+        toggleTheme();
+      }
+    });
+  </script>
+</div>
+
+<style>
+  #light-icon {
+    svg {
+      fill: #f43f5e;
+      stroke: #f59e0b;
+    }
+  }
+
+  #dark-icon {
+    svg {
+      stroke: #71717a;
+      stroke-width: 4px;
+      fill: #3f3f48;
+      transition-property: fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.15s;
+    }
+
+    &:hover {
+      svg {
+        stroke: #a1a1aa;
+      }
+    }
+  }
+</style>

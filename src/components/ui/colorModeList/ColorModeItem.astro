@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string;
+  icon: string;
+}
+
+const { label, icon } = Astro.props;
+---
+
+<button
+  class="social-link flex items-center justify-center text-white opacity-0 shadow-lg"
+  data-name="Telegram"
+>
+  {label}
+  <Fragment set:html={icon} />
+</button>

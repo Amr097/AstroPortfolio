@@ -1,0 +1,142 @@
+---
+import ColorModeItem from './ColorModeItem.astro';
+
+const modes = {
+  light: {
+    label: 'Light',
+    id: 'light',
+    icon: '',
+  },
+
+  dark: {
+    label: 'Dark',
+    id: 'dark',
+    icon: '',
+  },
+
+  colorblind: {
+    label: 'Colorblind',
+    id: 'colorblind',
+    icon: '',
+  },
+};
+---
+
+<div class="fab-open relative z-50 h-full w-80" id="fab-container">
+  <div
+    class="absolute top-1/2 right-0 flex h-10 w-10 -translate-y-1/2 transform items-center justify-end gap-8 rounded-full border border-white/20 bg-white/10 shadow-lg transition-all duration-500 ease-out"
+    id="expanding-bg"
+  >
+    <ul class="flex gap-4">
+      <ColorModeItem label={modes.light.label} icon="" />
+      <ColorModeItem label={modes.dark.label} icon="" />
+      <ColorModeItem label={modes.colorblind.label} icon="" />
+    </ul>
+
+    {/* Main Toggle Button */}
+    <button
+      class="flex min-h-10 min-w-10 cursor-pointer items-center justify-center rounded-full border-none"
+      id="fab-toggle"
+    >
+      {/* Icons */}
+      <svg
+        class="chat-icon relative z-10 transition-all duration-200"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+
+      <svg
+        class="close-icon absolute z-10 -rotate-90 transform opacity-0 transition-all duration-200"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  :global(.fab-open #expanding-bg) {
+    width: 20rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  :global(.fab-open .social-link) {
+    transition: all 200ms ease-out;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  :global(.fab-open .social-link:nth-of-type(1)) {
+    transition-delay: 200ms;
+  }
+
+  :global(.fab-open .social-link:nth-of-type(2)) {
+    transition-delay: 400ms;
+  }
+
+  :global(.fab-open .social-link:nth-of-type(3)) {
+    transition-delay: 600ms;
+  }
+
+  :global(.fab-open #ripple) {
+    animation: none;
+  }
+
+  :global(.fab-open .chat-icon) {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  :global(.fab-open .close-icon) {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  :global(#fab-container:not(.fab-open) #fab-toggle:hover) {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fabContainer = document.getElementById('fab-container') as HTMLElement | null;
+    const toggleButton = document.getElementById('fab-toggle') as HTMLElement | null;
+
+    if (toggleButton && fabContainer) {
+      toggleButton.addEventListener('click', () => {
+        fabContainer.classList.toggle('fab-open');
+      });
+
+      document.addEventListener('click', (event: MouseEvent) => {
+        const target = event.target as Node;
+        if (!fabContainer.contains(target)) {
+          fabContainer.classList.remove('fab-open');
+        }
+      });
+
+      document.addEventListener('keydown', (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          fabContainer.classList.remove('fab-open');
+        }
+      });
+    }
+  });
+</script>
