@@ -8,21 +8,20 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 <DefaultLayout>
   <div class="">
     <!-- Grid Layout -->
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="mt-34 grid grid-cols-[1fr_max-content_1fr] grid-rows-4 gap-4">
       <!-- Welcome Card - Spans 2 columns -->
-      <Card class="md:col-span-2">
+      <Card class="col-span-1 col-start-1 row-span-2">
         <div class="flex flex-col items-center gap-6 md:flex-row">
           <div class="flex-1">
-            <p class="mb-2 text-sm text-gray-400">Welcome</p>
             <h1 class="mb-4 text-xl">
-              Hi, I'm <span class="text-blue-400">Gianmarco Cavallo</span>, a software developer
-              with strong focus on the user experience, animations and micro interactions.
+              Hello, I'm <span class="text-blue-400">Amr</span>, a Frontend Engineer
             </h1>
             <p class="mb-6 text-gray-300">
-              Feel free to reach out to me if you have any projects in mind, or just to say hello.
+              Specialized in creating responsive and user-friendly interfaces for clients, ranging
+              from established companies to innovative startups. My expertise lies in translating
+              business requirements into user-friendly digital solutions.
             </p>
-
-            <div class="mb-4 flex gap-3">
+            <div class="mb-4 flex flex-wrap gap-2">
               <SocialButton href="https://github.com" icon="fab fa-github" label="GitHub" />
               <SocialButton href="https://linkedin.com" icon="fab fa-linkedin" label="LinkedIn" />
               <SocialButton href="https://dribbble.com" icon="fab fa-dribbble" label="Dribbble" />
@@ -34,120 +33,85 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
             </div>
 
             <button
-              class="rounded-lg bg-white px-6 py-2 font-medium text-black transition-colors hover:bg-gray-200"
+              class="w-full rounded-lg bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-gray-200"
             >
-              Book a call
+              Download CV
             </button>
           </div>
         </div>
       </Card>
 
-      <!-- About Me Card -->
-      <!-- <Card>
-        <h2 class="mb-4 text-lg font-semibold">About me</h2>
-        <p class="mb-4 text-sm text-gray-300">
-          Hi, I'm Gianmarco, a front-end software developer from Italy.
-        </p>
-        <p class="mb-4 text-sm text-gray-300">My primary tools of choice includes:</p>
-        <ul class="mb-4 space-y-1 text-sm text-gray-300">
-          <li>• JavaScript</li>
-          <li>• React</li>
-          <li>• SolidJS</li>
-          <li>• Astro</li>
-          <li>• Svelte</li>
-          <li>• Node.js</li>
-        </ul>
-        <p class="text-xs text-gray-400">
-          Beyond coding, I'm passionate about design, illustration, animation and 3D modeling and
-          traveling. An unusual hobby of mine is collecting vintage passports, they're interesting
-          pieces of history to me.
-        </p>
-      </Card> -->
+      <!-- Tech Stack Card -->
+      <Card class="col-start-1 row-span-2 row-start-3 md:col-span-1">
+        <h2 class="mb-4 text-lg font-semibold">Tech Stack</h2>
 
-      <!-- Contact Card -->
-      <!-- <Card>
-        <h2 class="mb-4 text-lg font-semibold">Let's start working together!</h2>
-        <div class="space-y-4">
-          <div>
-            <p class="text-sm text-gray-400">Contact Details</p>
-            <p class="text-sm text-gray-300">contact@gianmarcocavallo.com</p>
-            <p class="text-sm text-gray-300">Italy</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-400">Socials</p>
-            <div class="space-y-1 text-sm text-gray-300">
-              <p>LinkedIn</p>
-              <p>Github</p>
-              <p>Medium</p>
-              <p>Discord</p>
-            </div>
+        <div class="mb-4">
+          <p class="mb-2 text-xs font-medium tracking-wide text-gray-400 uppercase">Proficient</p>
+          <div class="flex flex-wrap gap-1 text-xs">
+            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">JavaScript</span>
+            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">React</span>
+            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">Next.js</span>
+            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">Tailwind</span>
           </div>
         </div>
-      </Card> -->
 
-      <!-- Now Card -->
-      <!-- <Card>
-        <div class="mb-2 flex items-center gap-2">
-          <div class="h-2 w-2 rounded-full bg-red-500"></div>
-          <h3 class="font-semibold">Now</h3>
+        <div>
+          <p class="mb-2 text-xs font-medium tracking-wide text-gray-400 uppercase">Comfortable</p>
+          <div class="flex flex-wrap gap-1 text-xs">
+            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">TypeScript</span>
+            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Node.js</span>
+            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Astro</span>
+            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Vue</span>
+          </div>
         </div>
-        <p class="text-sm text-gray-400">What's that?</p>
-        <p class="text-sm text-gray-300">Currently working fulltime</p>
-      </Card> -->
+      </Card>
 
-      <!-- Design Works Card -->
-      <!-- <Card href="/design-works" hasArrow={true}>
-        <h3 class="text-lg font-semibold">Design Works</h3>
-        <div class="mt-4 h-20 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 opacity-80">
+      <!-- Contact Card - Spans 2 columns for prominence -->
+      <Card class="row-span-4 md:col-span-1 md:col-start-3">
+        <h2 class="mb-4 text-lg font-semibold">Let's work together!</h2>
+        <p class="mb-6 text-sm text-gray-300">
+          Ready to bring your ideas to life? Get in touch and let's discuss your next project.
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <button
+            class="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+          >
+            Contact Form
+          </button>
+          <button
+            class="flex-1 rounded-lg border border-gray-600 px-6 py-3 font-medium text-gray-300 transition-colors hover:bg-gray-800"
+          >
+            Book a Call
+          </button>
         </div>
-      </Card> -->
+      </Card>
 
-      <!-- Playground Card -->
-      <!-- <Card href="/playground" hasArrow={true}>
-        <h3 class="text-lg font-semibold">Playground</h3>
-      </Card> -->
+      <!-- Experience Card -->
+      <Card href="/experience" hasArrow={true} class="col-span-1 md:col-start-2 md:row-start-1">
+        <h3 class="text-lg font-semibold">Experience</h3>
+        <p class="mt-2 text-sm text-gray-400">View my work history</p>
+      </Card>
+
+      <!-- Projects Card -->
+      <Card class="col-start-2 opacity-60">
+        <h3 class="text-lg font-semibold">Projects</h3>
+        <p class="mt-2 text-sm text-gray-400">Coming soon...</p>
+      </Card>
+
+      <!-- Projects Card -->
+      <Card class="col-start-2 opacity-60">
+        <h3 class="text-lg font-semibold">Projects</h3>
+        <p class="mt-2 text-sm text-gray-400">Coming soon...</p>
+      </Card>
 
       <!-- Blog Card -->
-      <!-- <Card href="/blog" hasArrow={true}>
+      <Card class="opacity-60 md:col-start-2">
         <h3 class="text-lg font-semibold">Blog</h3>
-      </Card> -->
-
-      <!-- Works Card -->
-      <!-- <Card>
-        <h3 class="mb-4 text-lg font-semibold">Works</h3>
-        <div class="-rotate-12 transform font-mono text-xs text-gray-400">
-          WORK IN<br />PROGRESS...
-        </div>
-      </Card> -->
-
-      <!-- Countries Visited Card -->
-      <!-- <Card href="/countries" hasArrow={true}>
-        <h3 class="mb-4 text-lg font-semibold">Countries I visited</h3>
-        <div class="flex h-20 items-center justify-center rounded-lg bg-gray-800">
-          <img src="/placeholder.svg?height=80&width=120" alt="World map" class="opacity-60" />
-        </div>
-      </Card> -->
+        <p class="mt-2 text-sm text-gray-400">Coming soon...</p>
+      </Card>
     </div>
   </div>
 </DefaultLayout>
 
-<script>
-  // // Update time every second
-  // function updateTime() {
-  //   const now = new Date();
-  //   const timeString = now.toLocaleTimeString('en-US', {
-  //     hour: '2-digit',
-  //     minute: '2-digit',
-  //     timeZone: 'CET',
-  //     hour12: true
-  //   }) + ' CET';
-
-  //   const timeElement = document.getElementById('current-time');
-  //   if (timeElement) {
-  //     timeElement.textContent = timeString;
-  //   }
-  // }
-
-  // updateTime();
-  // setInterval(updateTime, 1000);
-</script>
+<script></script>

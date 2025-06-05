@@ -4,9 +4,10 @@ import CardContainer from './ui/containers/CardContainer.astro';
 export interface Props {
   class?: string;
   href?: string;
+  hasArrow?: boolean;
 }
 
-const { class: className = '', href } = Astro.props;
+const { class: className = '', href, hasArrow = false } = Astro.props;
 const Tag = href ? 'a' : 'div';
 ---
 
@@ -19,6 +20,23 @@ const Tag = href ? 'a' : 'div';
   >
     <div class="relative">
       <slot />
+      {
+        hasArrow && (
+          <svg
+            class="absolute top-2 right-2 h-4 w-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 17L17 7M17 7H7M17 7V17"
+            />
+          </svg>
+        )
+      }
     </div>
   </Tag>
 </CardContainer>

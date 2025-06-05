@@ -20,9 +20,8 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
     <div class="bg-pattern absolute inset-0 z-0 bg-size-[0.5rem] bg-blend-multiply"></div>
     <!-- Overlay -->
     <div class="from-base via-base/95 to-base absolute inset-0 z-0 bg-gradient-to-t"></div>
-    <PaddingContainer
-      >\
-      <header class="sticky top-0 right-0 z-10 flex items-center justify-end gap-4 py-8">
+    <PaddingContainer>
+      <header class="fixed top-0 right-8 z-10 flex items-center justify-end gap-4 py-8">
         <!-- <ColorModeSelect /> -->
         <LightDarkToggle />
       </header>
