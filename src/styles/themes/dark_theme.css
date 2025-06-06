@@ -10,6 +10,14 @@
     --theme-bg-alt: rgb(31, 31, 31);
     --theme-bg-inverse: rgb(255, 255, 255);
 
+    /* Card Container Variables */
+    --theme-card-bg: rgb(30, 30, 30);
+    --theme-card-bg-hover: rgb(30, 30, 30);
+    --theme-card-border: rgb(51, 51, 51);
+    --theme-card-border-hover: rgb(75, 75, 75);
+    --theme-card-shadow: rgba(0, 0, 0, 0.3);
+    --theme-card-shadow-hover: rgba(0, 0, 0, 0.4);
+
     /* Text Variables */
     --theme-text-base: rgb(238, 238, 238);
     --theme-text-muted: rgb(153, 153, 153);
@@ -33,6 +41,14 @@
   --theme-bg-layer-2: rgb(30, 30, 30);
   --theme-bg-alt: rgb(31, 31, 31);
   --theme-bg-inverse: rgb(255, 255, 255);
+
+  /* Card Container Variables */
+  --theme-card-bg: rgb(30, 30, 30);
+  --theme-card-bg-hover: rgb(30, 30, 30);
+  --theme-card-border: rgb(51, 51, 51);
+  --theme-card-border-hover: rgb(75, 75, 75);
+  --theme-card-shadow: rgba(0, 0, 0, 0.3);
+  --theme-card-shadow-hover: rgba(0, 0, 0, 0.4);
 
   /* Text Variables */
   --theme-text-base: rgb(238, 238, 238);

@@ -9,6 +9,14 @@
   --theme-bg-alt: rgb(249, 249, 249);
   --theme-bg-inverse: rgb(17, 17, 17);
 
+  /* Card Container Variables */
+  --theme-card-bg: rgb(255, 255, 255);
+  --theme-card-bg-hover: rgb(255, 255, 255);
+  --theme-card-border: rgb(229, 231, 235);
+  --theme-card-border-hover: rgb(209, 213, 219);
+  --theme-card-shadow: rgba(0, 0, 0, 0.1);
+  --theme-card-shadow-hover: rgba(0, 0, 0, 0.15);
+
   /* Text Variables */
   --theme-text-base: rgb(17, 17, 17);
   --theme-text-muted: rgb(102, 102, 102);
