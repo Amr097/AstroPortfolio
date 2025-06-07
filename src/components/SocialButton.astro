@@ -1,17 +1,16 @@
 ---
 export interface Props {
   href: string;
-  icon: string;
   label: string;
 }
 
-const { href, icon, label } = Astro.props;
+const { href, label } = Astro.props;
 ---
 
 <a
   {href}
-  class="flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 transition-colors hover:border-gray-600"
+  class="bg-card-background border-card-border hover:border-card-border-hover relative z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border transition-all duration-200 hover:shadow-sm"
   aria-label={label}
 >
-  <i class={`${icon} text-gray-300`}></i>
+  <slot />
 </a>

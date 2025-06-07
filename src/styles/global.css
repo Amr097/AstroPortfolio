@@ -130,8 +130,14 @@
 }
 
 @theme {
+  /* Background Theme Variables */
   --background-image-pattern: var(--theme-bg-pattern);
   --color-base: var(--theme-bg-base);
+  --color-canvas: var(--theme-bg-canvas);
+  --color-layer-1: var(--theme-bg-layer-1);
+  --color-layer-2: var(--theme-bg-layer-2);
+  --color-alt: var(--theme-bg-alt);
+  --color-inverse: var(--theme-bg-inverse);
   
   /* Card Container Theme Variables */
   --color-card-background: var(--theme-card-bg);
@@ -140,4 +146,16 @@
   --color-card-border-hover: var(--theme-card-border-hover);
   --color-card-shadow: var(--theme-card-shadow);
   --color-card-shadow-hover: var(--theme-card-shadow-hover);
+
+  /* Text Theme Variables */
+  --color-text-base: var(--theme-text-base);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-inverse: var(--theme-text-inverse);
+  --color-text-accent: var(--theme-text-accent);
+  --color-text-danger: var(--theme-text-danger);
+
+  /* Button Theme Variables */
+  --color-btn-primary-bg: var(--theme-btn-primary-bg);
+  --color-btn-primary-bg-hover: var(--theme-btn-primary-bg-hover);
+  --color-btn-primary-text: var(--theme-btn-primary-text);
 }

@@ -1,0 +1,39 @@
+---
+import SocialButton from '../../SocialButton.astro';
+import { GithubIcon, Linkedin, Mail, Download } from '@lucide/astro';
+---
+
+<div class="flex flex-col items-center gap-6 md:flex-row">
+  <div class="flex-1">
+    <div class="mb-6 flex items-center justify-between gap-4">
+      <h1 class="text-text-base text-xl">
+        Hi, I'm <span class="text-text-accent">Amr</span>, a Frontend Engineer
+      </h1>
+      <a
+        href="/resume.pdf"
+        download
+        class="bg-card-background border-card-border hover:border-card-border-hover inline-flex items-center gap-2 rounded-full border px-6 py-3 transition-all duration-200 hover:shadow-sm"
+      >
+        <span class="text-text-muted text-sm font-medium">Resume</span>
+        <Download size={18} class="text-text-muted" />
+      </a>
+    </div>
+
+    <p class="text-text-muted mb-6">
+      Specialized in building responsive user-friendly interfaces for clients, ranging from
+      established companies to innovative startups. My expertise lies in translating business
+      requirements and Figma designs into user-friendly digital solutions.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <SocialButton href="https://github.com" label="GitHub">
+        <GithubIcon size={20} class="text-text-muted" />
+      </SocialButton>
+      <SocialButton href="https://linkedin.com" label="LinkedIn">
+        <Linkedin size={20} class="text-text-muted" />
+      </SocialButton>
+      <SocialButton href="mailto:contact@example.com" label="Email">
+        <Mail size={20} class="text-text-muted" />
+      </SocialButton>
+    </div>
+  </div>
+</div>
