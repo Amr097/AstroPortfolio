@@ -1,0 +1,27 @@
+---
+import Tooltip from './Tooltip.astro';
+
+export interface Props {
+  svg: string;
+  label: string;
+  class?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+}
+
+const sizeClasses = {
+  sm: 'h-6 w-6', // 24px
+  md: 'h-8 w-8', // 32px
+  lg: 'h-10 w-10', // 40px
+  xl: 'h-12 w-12', // 48px
+} as const;
+
+const { svg, label, class: className = '', size = 'md' } = Astro.props;
+---
+
+<div
+  class={`group relative flex items-center justify-center ${sizeClasses[size]} ${className}`}
+  role="tooltip"
+>
+  <span set:html={svg} class={`flex items-center justify-center ${sizeClasses[size]}`} />
+  <Tooltip {label} />
+</div>

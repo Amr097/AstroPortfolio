@@ -1,8 +1,10 @@
 ---
 import '../styles/global.css';
-import Card from '../components/Card.astro';
+
+import CardContainer from '../components/ui/containers/CardContainer.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-import About from '../components/index/components/About.astro';
+import About from '../features/index/components/About.astro';
+import Skills from '../features/index/components/Skills.astro';
 ---
 
 <DefaultLayout>
@@ -10,34 +12,14 @@ import About from '../components/index/components/About.astro';
     <!-- Grid Layout -->
     <div class="mt-34 grid grid-cols-[1fr_max-content_1fr] grid-rows-4 gap-4">
       <!-- Welcome Card - Spans 2 columns -->
-      <Card class="col-span-1 col-start-1 row-span-2">
-       <About
-      </Card>
+      <CardContainer class="col-span-1 col-start-1 row-span-2">
+        <About />
+      </CardContainer>
 
       <!-- Tech Stack Card -->
-      <!-- <Card class="col-start-1 row-span-2 row-start-3 md:col-span-1">
-        <h2 class="mb-4 text-lg font-semibold">Tech Stack</h2>
-
-        <div class="mb-4">
-          <p class="mb-2 text-xs font-medium tracking-wide text-gray-400 uppercase">Proficient</p>
-          <div class="flex flex-wrap gap-1 text-xs">
-            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">JavaScript</span>
-            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">React</span>
-            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">Next.js</span>
-            <span class="rounded bg-blue-600/20 px-2 py-1 text-blue-300">Tailwind</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="mb-2 text-xs font-medium tracking-wide text-gray-400 uppercase">Comfortable</p>
-          <div class="flex flex-wrap gap-1 text-xs">
-            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">TypeScript</span>
-            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Node.js</span>
-            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Astro</span>
-            <span class="rounded bg-gray-600/20 px-2 py-1 text-gray-300">Vue</span>
-          </div>
-        </div>
-      </Card> -->
+      <CardContainer class="col-start-1 row-span-2 row-start-3 md:col-span-1">
+        <Skills />
+      </CardContainer>
 
       <!-- Contact Card - Spans 2 columns for prominence -->
       <!-- <Card class="row-span-4 md:col-span-1 md:col-start-3">
@@ -85,6 +67,6 @@ import About from '../components/index/components/About.astro';
       </Card> -->
     </div>
   </div>
-</DefaultLayout>
 
-<script></script>
+  <script></script>
+</DefaultLayout>

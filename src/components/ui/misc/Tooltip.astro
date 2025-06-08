@@ -1,0 +1,15 @@
+---
+export interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div
+  class="bg-inverse pointer-events-none absolute -top-10 left-1/2 block -translate-x-1/2 translate-y-2 transform rounded-md px-2 py-1 text-base text-xs font-medium whitespace-nowrap opacity-0 transition-all duration-100 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:z-[100] group-hover:translate-y-0 group-hover:opacity-100"
+  role="tooltip"
+  aria-label={label}
+>
+  {label}
+</div>
