@@ -1,54 +1,50 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    /* Background & Surface Colors */
-    --theme-bg-pattern: url('/dark-pattern.svg');
-    --theme-bg-base: rgb(0, 0, 0); /* #000000 */
-    --theme-bg-surface: rgb(107, 107, 107); /* #6B6B6B */
-    --theme-bg-elevated: rgb(192, 192, 192); /* #C0C0C0 */
+    /* Base Colors */
+    --color-base: rgb(0, 0, 0); /* #000000 */
+    --color-surface-100: rgb(238, 238, 238); /* #EEEEEE - lightest */
+    --color-surface-200: rgb(192, 192, 192); /* #C0C0C0 */
+    --color-surface-300: rgb(107, 107, 107); /* #6B6B6B */
+    --color-surface-700: rgb(16, 16, 16); /* #101010 */
+    --color-surface-900: rgb(10, 10, 10); /* #0A0A0A - darkest */
     
-    /* Card Variables */
-    --theme-card-bg: rgb(107, 107, 107); /* #6B6B6B */
-    --theme-card-bg-hover: rgb(192, 192, 192); /* #C0C0C0 */
-    --theme-card-border: rgb(107, 107, 107); /* #6B6B6B */
-    --theme-card-border-hover: rgb(238, 238, 238); /* #EEEEEE */
+    /* Text Hierarchy */
+    --color-text-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+    --color-text-200: rgb(238, 238, 238); /* #EEEEEE */
+    --color-text-300: rgb(201, 201, 201); /* #C9C9C9 */
+    --color-text-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
     
-    /* Text Colors */
-    --theme-text-primary: rgb(255, 255, 255); /* #FFFFFF */
-    --theme-text-secondary: rgb(201, 201, 201); /* #C9C9C9 */
-    --theme-text-muted: rgb(238, 238, 238); /* #EEEEEE */
-    --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
-    
-    /* UI Elements */
-    --theme-accent: rgb(57, 158, 222); /* #399EDE */
-    --theme-muted: rgb(238, 238, 238); /* #EEEEEE */
-    --theme-border: rgb(107, 107, 107); /* #6B6B6B */
+    /* Accents & Borders */
+    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+    --color-border-300: rgb(238, 238, 238, 0.7); /* #EEEEEE */
+    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+  
+    /* Patterns */
+    --pattern-bg: url('/dark-pattern.svg');
   }
 }
 
 
 [data-theme='dark'] {
+  /* Base Colors */
+  --color-base: rgb(0, 0, 0); /* #000000 */
+  --color-surface-100: rgb(238, 238, 238); /* #EEEEEE - lightest */
+  --color-surface-200: rgb(192, 192, 192); /* #C0C0C0 */
+  --color-surface-300: rgb(107, 107, 107); /* #6B6B6B */
+  --color-surface-700: rgb(16, 16, 16);   /* #101010 */ 
+  --color-surface-900: rgb(12, 12, 12);   /* #0C0C0C - darkest */      
+  
+  /* Text Hierarchy */
+  --color-text-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+  --color-text-200: rgb(238, 238, 238); /* #EEEEEE */
+  --color-text-300: rgb(201, 201, 201); /* #C9C9C9 */
+  --color-text-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
+  
+  /* Accents & Borders */
+  --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+  --color-border-300: rgb(238, 238, 238, 0.7); /* #EEEEEE */
+  --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
 
-      /* Background & Surface Colors */
-      --theme-bg-pattern: url('/dark-pattern.svg');
-      --theme-bg-base: rgb(0, 0, 0); /* #000000 */
-      --theme-bg-surface: rgb(107, 107, 107); /* #6B6B6B */ 
-      --theme-bg-elevated: rgb(192, 192, 192); /* #C0C0C0 */
-      
-      /* Card Variables */
-      --theme-card-bg:    rgb(10 10 10) /* #0A0A0A */;
-      --theme-card-bg-hover: rgb(12 12 12) /* #0C0C0C */; 
-      --theme-card-border: rgb(107, 107, 107); /* #6B6B6B */
-      --theme-card-border-hover: rgb(238, 238, 238, 0.7); /* #EEEEEE */
-      
-      /* Text Colors */
-      --theme-text-primary: rgb(255, 255, 255); /* #FFFFFF */
-      --theme-text-secondary: rgb(201, 201, 201); /* #C9C9C9 */
-      --theme-text-muted: rgb(238, 238, 238); /* #EEEEEE */
-      --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
-      
-      /* UI Elements */
-      --theme-accent: rgb(57, 158, 222); /* #399EDE */
-      --theme-muted: rgb(238, 238, 238); /* #EEEEEE */
-      --theme-border: rgb(107, 107, 107); /* #6B6B6B */
-    }
- 
+  /* Patterns */
+  --pattern-bg: url('/dark-pattern.svg');
+}

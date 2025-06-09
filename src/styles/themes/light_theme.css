@@ -1,24 +1,23 @@
 [data-theme='light'] {
-  /* Background & Surface Colors */
-  --theme-bg-pattern: url('/light-pattern.svg');
-  --theme-bg-base: rgb(255, 255, 255); /* #FFFFFF */
-  --theme-bg-surface: rgb(238, 238, 238); /* #EEEEEE */
-  --theme-bg-elevated: rgb(255, 255, 255); /* #FFFFFF */
+  /* Base Colors */
+  --color-base: rgb(255, 255, 255); /* #FFFFFF */
+  --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+  --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
+  --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
+  --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
+  --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
   
-  /* Card Variables */
-  --theme-card-bg: rgb(238, 238, 238); /* #EEEEEE */
-  --theme-card-bg-hover: rgb(255, 255, 255); /* #FFFFFF */
-  --theme-card-border: rgb(201, 201, 201); /* #C9C9C9 */
-  --theme-card-border-hover: rgb(107, 107, 107); /* #6B6B6B */
+  /* Text Hierarchy */
+  --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
+  --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
+  --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
+  --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
   
-  /* Text Colors */
-  --theme-text-primary: rgb(0, 0, 0); /* #000000 */
-  --theme-text-secondary: rgb(107, 107, 107); /* #6B6B6B */
-  --theme-text-muted: rgb(192, 192, 192); /* #C0C0C0 */
-  --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
-  
-  /* UI Elements */
-  --theme-accent: rgb(57, 158, 222); /* #399EDE */
-  --theme-muted: rgb(192, 192, 192); /* #C0C0C0 */
-  --theme-border: rgb(201, 201, 201); /* #C9C9C9 */
+  /* Accents & Borders */
+  --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+  --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
+  --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+
+  /* Patterns */
+  --pattern-bg: url('/light-pattern.svg');
 }

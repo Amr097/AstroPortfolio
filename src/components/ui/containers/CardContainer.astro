@@ -6,10 +6,10 @@ export interface Props {
 const { class: className = '' } = Astro.props;
 ---
 
-<div 
+<div
   class={`z-10 rounded-2xl p-6 
-  bg-card-background hover:bg-card-background-hover
-  border border-card-border hover:border-card-border-hover
+  bg-surface-900/75 hover:bg-surface-700/75
+  border border-border-900 hover:border-border-300
   shadow-card-shadow hover:shadow-card-shadow-hover
   transition-all duration-200
   ${className}`}

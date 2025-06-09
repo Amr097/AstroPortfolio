@@ -6,20 +6,20 @@ import { GithubIcon, Linkedin, Mail, Download } from '@lucide/astro';
 <div class="flex flex-col items-center gap-6 md:flex-row">
   <div class="flex-1">
     <div class="mb-6 flex items-center justify-between gap-4">
-      <h1 class="text-text-base text-xl">
-        Hi, I'm <span class="text-text-accent">Amr</span>, a Frontend Engineer
+      <h1 class="heading-2">
+        Hi, I'm <span class="text-accent-500 font-bold">Amr</span>, a Frontend Engineer
       </h1>
       <a
         href="/resume.pdf"
         download
-        class="bg-card-background border-card-border hover:border-card-border-hover inline-flex items-center gap-2 rounded-full border px-6 py-3 transition-all duration-200 hover:shadow-sm"
+        class="bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 inline-flex items-center gap-2 rounded-full border px-3 py-2 transition-all duration-200 hover:shadow-sm"
       >
-        <span class="text-text-muted text-sm font-medium">Resume</span>
-        <Download size={18} class="text-text-muted" />
+        <span class="text-text-muted label">Resume</span>
+        <Download size={15} class="text-text-muted" />
       </a>
     </div>
 
-    <p class="text-text-muted mb-6">
+    <p class="text-text-200 text-md mb-6 leading-relaxed">
       Specialized in building responsive user-friendly interfaces for clients, ranging from
       established companies to innovative startups. My expertise lies in translating business
       requirements and Figma designs into user-friendly digital solutions.

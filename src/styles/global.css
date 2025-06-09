@@ -96,56 +96,95 @@
 @import './themes/theme.css';
 
 @layer base {
+
+  /* Typography Scale */
+  .heading-1 {
+    @apply text-3xl font-semibold leading-tight md:text-4xl;
+  }
+
+  .heading-2 {
+    @apply text-2xl font-semibold leading-tight md:text-3xl;
+  }
+
+  .heading-3 {
+    @apply text-xl font-medium leading-snug md:text-2xl;
+  }
+
+  .heading-4 {
+    @apply text-lg font-medium leading-snug md:text-xl;
+  }
+
+  /* Paragraph Styles */
+  .text-lg {
+    @apply text-lg leading-relaxed;
+  }
+
+  .text-md {
+    @apply text-[1rem] leading-relaxed;
+  }
+
+  .text-sm {
+    @apply text-sm leading-relaxed;
+  }
+
+  /* Label & Caption */
+  .label {
+    @apply text-sm font-medium;
+  }
+
+  .caption {
+    @apply text-xs leading-normal;
+  }
+
+
   /* Base theme variables (light mode default) */
   :root {
-    [data-theme='light'] {
-      /* Background & Surface Colors */
-      --theme-bg-pattern: url('/light-pattern.svg');
-      --theme-bg-base: rgb(255, 255, 255); /* #FFFFFF */
-      --theme-bg-surface: rgb(238, 238, 238); /* #EEEEEE */
-      --theme-bg-elevated: rgb(255, 255, 255); /* #FFFFFF */
-      
-      /* Card Variables */
-      --theme-card-bg: rgb(238, 238, 238); /* #EEEEEE */
-      --theme-card-bg-hover: rgb(255, 255, 255); /* #FFFFFF */
-      --theme-card-border: rgb(201, 201, 201); /* #C9C9C9 */
-      --theme-card-border-hover: rgb(107, 107, 107); /* #6B6B6B */
-      
-      /* Text Colors */
-      --theme-text-primary: rgb(0, 0, 0); /* #000000 */
-      --theme-text-secondary: rgb(107, 107, 107); /* #6B6B6B */
-      --theme-text-muted: rgb(192, 192, 192); /* #C0C0C0 */
-      --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
-      
-      /* UI Elements */
-      --theme-accent: rgb(57, 158, 222); /* #399EDE */
-      --theme-muted: rgb(192, 192, 192); /* #C0C0C0 */
-      --theme-border: rgb(201, 201, 201); /* #C9C9C9 */
-    }
+
+  /* Base Colors */
+  --color-base: rgb(255, 255, 255); /* #FFFFFF */
+  --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+  --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
+  --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
+  --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
+  --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
+  
+  /* Text Hierarchy */
+  --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
+  --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
+  --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
+  --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
+  
+  /* Accents & Borders */
+  --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+  --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
+  --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+
+  /* Patterns */
+  --pattern-bg: url('/light-pattern.svg');
+
   }
+  
 }
 
 @theme {
-    /* Background Theme Variables */
-    --background-image-pattern: var(--theme-bg-pattern);
-    --color-base: var(--theme-bg-base);
-    --color-surface: var(--theme-bg-surface);
-    --color-elevated: var(--theme-bg-elevated);
-    
-    /* Card Container Theme Variables */
-    --color-card-background: var(--theme-card-bg);
-    --color-card-background-hover: var(--theme-card-bg-hover);
-    --color-card-border: var(--theme-card-border);
-    --color-card-border-hover: var(--theme-card-border-hover);
+  /* Background Theme Variables */
+  --background-image-pattern: var(--pattern-bg);
+  --color-base: var(--color-base);
+  --color-surface-100: var(--color-surface-100);
+  --color-surface-200: var(--color-surface-200);
+  --color-surface-300: var(--color-surface-300);
+  --color-surface-400: var(--color-surface-400);
+  --color-surface-700: var(--color-surface-700);
+  --color-surface-900: var(--color-surface-900);
   
-    /* Text Theme Variables */
-    --color-text-primary: var(--theme-text-primary);
-    --color-text-secondary: var(--theme-text-secondary);
-    --color-text-muted: var(--theme-text-muted);
-    --color-text-accent: var(--theme-text-accent);
+  /* Text Theme Variables */
+  --color-text-100: var(--color-text-100);
+  --color-text-200: var(--color-text-200);
+  --color-text-300: var(--color-text-300);
+  --color-text-900: var(--color-text-900);
   
-    /* UI Element Theme Variables */
-    --color-accent: var(--theme-accent);
-    --color-muted: var(--theme-muted);
-    --color-border: var(--theme-border);
+  /* Accent & Border Variables */
+  --color-accent-500: var(--color-accent-500);
+  --color-border-300: var(--color-border-300);
+  --color-border-900: var(--color-border-900);
 }
