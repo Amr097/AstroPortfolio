@@ -98,64 +98,54 @@
 @layer base {
   /* Base theme variables (light mode default) */
   :root {
-    /* Background Variables */
-    --theme-bg-pattern: url('/light-pattern.svg');
-    --theme-bg-base: rgb(255, 255, 255);
-    --theme-bg-canvas: rgb(248, 249, 250);
-    --theme-bg-layer-1: rgb(241, 243, 245);
-    --theme-bg-layer-2: rgb(255, 255, 255);
-    --theme-bg-alt: rgb(249, 249, 249);
-    --theme-bg-inverse: rgb(17, 17, 17);
-
-    /* Card Container Variables */
-    --theme-card-bg: rgb(255, 255, 255);
-    --theme-card-bg-hover: rgb(255, 255, 255);
-    --theme-card-border: rgb(229, 231, 235);
-    --theme-card-border-hover: rgb(209, 213, 219);
-    --shadow-card-shadow: rgba(0, 0, 0, 0.1);
-    --shadow-card-shadow-hover: rgba(0, 0, 0, 0.15);
-
-    /* Text Variables */
-    --theme-text-base: rgb(17, 17, 17);
-    --theme-text-muted: rgb(102, 102, 102);
-    --theme-text-inverse: rgb(255, 255, 255);
-    --theme-text-accent: rgb(0, 86, 199);
-    --theme-text-danger: rgb(211, 47, 47);
-
-    /* Button Variables */
-    --theme-btn-primary-bg: rgb(0, 112, 243);
-    --theme-btn-primary-bg-hover: rgb(0, 86, 199);
-    --theme-btn-primary-text: rgb(255, 255, 255);
+    [data-theme='light'] {
+      /* Background & Surface Colors */
+      --theme-bg-pattern: url('/light-pattern.svg');
+      --theme-bg-base: rgb(255, 255, 255); /* #FFFFFF */
+      --theme-bg-surface: rgb(238, 238, 238); /* #EEEEEE */
+      --theme-bg-elevated: rgb(255, 255, 255); /* #FFFFFF */
+      
+      /* Card Variables */
+      --theme-card-bg: rgb(238, 238, 238); /* #EEEEEE */
+      --theme-card-bg-hover: rgb(255, 255, 255); /* #FFFFFF */
+      --theme-card-border: rgb(201, 201, 201); /* #C9C9C9 */
+      --theme-card-border-hover: rgb(107, 107, 107); /* #6B6B6B */
+      
+      /* Text Colors */
+      --theme-text-primary: rgb(0, 0, 0); /* #000000 */
+      --theme-text-secondary: rgb(107, 107, 107); /* #6B6B6B */
+      --theme-text-muted: rgb(192, 192, 192); /* #C0C0C0 */
+      --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
+      
+      /* UI Elements */
+      --theme-accent: rgb(57, 158, 222); /* #399EDE */
+      --theme-muted: rgb(192, 192, 192); /* #C0C0C0 */
+      --theme-border: rgb(201, 201, 201); /* #C9C9C9 */
+    }
   }
 }
 
 @theme {
-  /* Background Theme Variables */
-  --background-image-pattern: var(--theme-bg-pattern);
-  --color-base: var(--theme-bg-base);
-  --color-canvas: var(--theme-bg-canvas);
-  --color-layer-1: var(--theme-bg-layer-1);
-  --color-layer-2: var(--theme-bg-layer-2);
-  --color-alt: var(--theme-bg-alt);
-  --color-inverse: var(--theme-bg-inverse);
+    /* Background Theme Variables */
+    --background-image-pattern: var(--theme-bg-pattern);
+    --color-base: var(--theme-bg-base);
+    --color-surface: var(--theme-bg-surface);
+    --color-elevated: var(--theme-bg-elevated);
+    
+    /* Card Container Theme Variables */
+    --color-card-background: var(--theme-card-bg);
+    --color-card-background-hover: var(--theme-card-bg-hover);
+    --color-card-border: var(--theme-card-border);
+    --color-card-border-hover: var(--theme-card-border-hover);
   
-  /* Card Container Theme Variables */
-  --color-card-background: var(--theme-card-bg);
-  --color-card-background-hover: var(--theme-card-bg-hover);
-  --color-card-border: var(--theme-card-border);
-  --color-card-border-hover: var(--theme-card-border-hover);
-  --color-card-shadow: var(--theme-card-shadow);
-  --color-card-shadow-hover: var(--theme-card-shadow-hover);
-
-  /* Text Theme Variables */
-  --color-text-base: var(--theme-text-base);
-  --color-text-muted: var(--theme-text-muted);
-  --color-text-inverse: var(--theme-text-inverse);
-  --color-text-accent: var(--theme-text-accent);
-  --color-text-danger: var(--theme-text-danger);
-
-  /* Button Theme Variables */
-  --color-btn-primary-bg: var(--theme-btn-primary-bg);
-  --color-btn-primary-bg-hover: var(--theme-btn-primary-bg-hover);
-  --color-btn-primary-text: var(--theme-btn-primary-text);
+    /* Text Theme Variables */
+    --color-text-primary: var(--theme-text-primary);
+    --color-text-secondary: var(--theme-text-secondary);
+    --color-text-muted: var(--theme-text-muted);
+    --color-text-accent: var(--theme-text-accent);
+  
+    /* UI Element Theme Variables */
+    --color-accent: var(--theme-accent);
+    --color-muted: var(--theme-muted);
+    --color-border: var(--theme-border);
 }

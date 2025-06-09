@@ -1,31 +1,24 @@
-/* Manual theme overrides (optional - for user preference toggles) */
 [data-theme='light'] {
-  /* Background Variables */
+  /* Background & Surface Colors */
   --theme-bg-pattern: url('/light-pattern.svg');
-  --theme-bg-base: rgb(255, 255, 255);
-  --theme-bg-canvas: rgb(248, 249, 250);
-  --theme-bg-layer-1: rgb(241, 243, 245);
-  --theme-bg-layer-2: rgb(255, 255, 255);
-  --theme-bg-alt: rgb(249, 249, 249);
-  --theme-bg-inverse: rgb(17, 17, 17);
-
-  /* Card Container Variables */
-  --theme-card-bg: rgb(255, 255, 255);
-  --theme-card-bg-hover: rgb(255, 255, 255);
-  --theme-card-border: rgb(229, 231, 235);
-  --theme-card-border-hover: rgb(209, 213, 219);
-  --theme-card-shadow: rgba(0, 0, 0, 0.1);
-  --theme-card-shadow-hover: rgba(0, 0, 0, 0.15);
-
-  /* Text Variables */
-  --theme-text-base: rgb(17, 17, 17);
-  --theme-text-muted: rgb(102, 102, 102);
-  --theme-text-inverse: rgb(255, 255, 255);
-  --theme-text-accent: rgb(0, 86, 199);
-  --theme-text-danger: rgb(211, 47, 47);
-
-  /* Button Variables */
-  --theme-btn-primary-bg: rgb(0, 112, 243);
-  --theme-btn-primary-bg-hover: rgb(0, 86, 199);
-  --theme-btn-primary-text: rgb(255, 255, 255);
+  --theme-bg-base: rgb(255, 255, 255); /* #FFFFFF */
+  --theme-bg-surface: rgb(238, 238, 238); /* #EEEEEE */
+  --theme-bg-elevated: rgb(255, 255, 255); /* #FFFFFF */
+  
+  /* Card Variables */
+  --theme-card-bg: rgb(238, 238, 238); /* #EEEEEE */
+  --theme-card-bg-hover: rgb(255, 255, 255); /* #FFFFFF */
+  --theme-card-border: rgb(201, 201, 201); /* #C9C9C9 */
+  --theme-card-border-hover: rgb(107, 107, 107); /* #6B6B6B */
+  
+  /* Text Colors */
+  --theme-text-primary: rgb(0, 0, 0); /* #000000 */
+  --theme-text-secondary: rgb(107, 107, 107); /* #6B6B6B */
+  --theme-text-muted: rgb(192, 192, 192); /* #C0C0C0 */
+  --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
+  
+  /* UI Elements */
+  --theme-accent: rgb(57, 158, 222); /* #399EDE */
+  --theme-muted: rgb(192, 192, 192); /* #C0C0C0 */
+  --theme-border: rgb(201, 201, 201); /* #C9C9C9 */
 }

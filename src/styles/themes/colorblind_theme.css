@@ -10,7 +10,7 @@
   --theme-bg-inverse: rgb(17, 17, 17);
 
   --theme-text-base: rgb(0, 0, 0);
-  --theme-text-muted: rgb(102, 102, 102);
+  --theme-text-muted: #c9c9c9;
   --theme-text-inverse: rgb(255, 255, 255);
   --theme-text-accent: rgb(0, 102, 204); /* Safe blue */
   --theme-text-danger: rgb(255, 153, 0); /* Orange instead of red */

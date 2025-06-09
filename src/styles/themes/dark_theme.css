@@ -1,64 +1,54 @@
-/* Dark mode - automatically applied when user prefers dark mode */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    /* Background Variables */
+    /* Background & Surface Colors */
     --theme-bg-pattern: url('/dark-pattern.svg');
-    --theme-bg-base: rgb(00, 00, 00);
-    --theme-bg-canvas: rgb(26, 26, 26);
-    --theme-bg-layer-1: rgb(42, 42, 42);
-    --theme-bg-layer-2: rgb(30, 30, 30);
-    --theme-bg-alt: rgb(31, 31, 31);
-    --theme-bg-inverse: rgb(255, 255, 255);
-
-    /* Card Container Variables */
-    --theme-card-bg: rgb(30, 30, 30);
-    --theme-card-bg-hover: rgb(30, 30, 30);
-    --theme-card-border: rgb(51, 51, 51);
-    --theme-card-border-hover: rgb(75, 75, 75);
-    --theme-card-shadow: rgba(0, 0, 0, 0.3);
-    --theme-card-shadow-hover: rgba(0, 0, 0, 0.4);
-
-    /* Text Variables */
-    --theme-text-base: rgb(238, 238, 238);
-    --theme-text-muted: rgb(153, 153, 153);
-    --theme-text-inverse: rgb(0, 0, 0);
-    --theme-text-accent: rgb(88, 166, 255);
-    --theme-text-danger: rgb(255, 107, 107);
-
-    /* Button Variables */
-    --theme-btn-primary-bg: rgb(30, 144, 255);
-    --theme-btn-primary-bg-hover: rgb(28, 126, 214);
-    --theme-btn-primary-text: rgb(255, 255, 255);
+    --theme-bg-base: rgb(0, 0, 0); /* #000000 */
+    --theme-bg-surface: rgb(107, 107, 107); /* #6B6B6B */
+    --theme-bg-elevated: rgb(192, 192, 192); /* #C0C0C0 */
+    
+    /* Card Variables */
+    --theme-card-bg: rgb(107, 107, 107); /* #6B6B6B */
+    --theme-card-bg-hover: rgb(192, 192, 192); /* #C0C0C0 */
+    --theme-card-border: rgb(107, 107, 107); /* #6B6B6B */
+    --theme-card-border-hover: rgb(238, 238, 238); /* #EEEEEE */
+    
+    /* Text Colors */
+    --theme-text-primary: rgb(255, 255, 255); /* #FFFFFF */
+    --theme-text-secondary: rgb(201, 201, 201); /* #C9C9C9 */
+    --theme-text-muted: rgb(238, 238, 238); /* #EEEEEE */
+    --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
+    
+    /* UI Elements */
+    --theme-accent: rgb(57, 158, 222); /* #399EDE */
+    --theme-muted: rgb(238, 238, 238); /* #EEEEEE */
+    --theme-border: rgb(107, 107, 107); /* #6B6B6B */
   }
 }
 
+
 [data-theme='dark'] {
-  /* Background Variables */
-  --theme-bg-pattern: url('/dark-pattern.svg');
-  --theme-bg-base: rgb(00, 00, 00);
-  --theme-bg-canvas: rgb(26, 26, 26);
-  --theme-bg-layer-1: rgb(42, 42, 42);
-  --theme-bg-layer-2: rgb(30, 30, 30);
-  --theme-bg-alt: rgb(31, 31, 31);
-  --theme-bg-inverse: rgb(255, 255, 255);
 
-  /* Card Container Variables */
-  --theme-card-bg: rgb(30, 30, 30);
-  --theme-card-bg-hover: rgb(30, 30, 30);
-  --theme-card-border: rgb(51, 51, 51);
-  --theme-card-border-hover: rgb(75, 75, 75);
-  --theme-card-shadow: rgba(0, 0, 0, 0.3);
-  --theme-card-shadow-hover: rgba(0, 0, 0, 0.4);
-
-  /* Text Variables */
-  --theme-text-base: rgb(238, 238, 238);
-  --theme-text-muted: rgb(153, 153, 153);
-  --theme-text-inverse: rgb(0, 0, 0);
-  --theme-text-accent: rgb(88, 166, 255);
-  --theme-text-danger: rgb(255, 107, 107);
-
-  /* Button Variables */
-  --theme-btn-primary-bg: rgb(30, 144, 255);
-  --theme-btn-primary-bg-hover: rgb(28, 126, 214);
-  --theme-btn-primary-text: rgb(255, 255, 255);
-}
+      /* Background & Surface Colors */
+      --theme-bg-pattern: url('/dark-pattern.svg');
+      --theme-bg-base: rgb(0, 0, 0); /* #000000 */
+      --theme-bg-surface: rgb(107, 107, 107); /* #6B6B6B */ 
+      --theme-bg-elevated: rgb(192, 192, 192); /* #C0C0C0 */
+      
+      /* Card Variables */
+      --theme-card-bg:    rgb(10 10 10) /* #0A0A0A */;
+      --theme-card-bg-hover: rgb(12 12 12) /* #0C0C0C */; 
+      --theme-card-border: rgb(107, 107, 107); /* #6B6B6B */
+      --theme-card-border-hover: rgb(238, 238, 238, 0.7); /* #EEEEEE */
+      
+      /* Text Colors */
+      --theme-text-primary: rgb(255, 255, 255); /* #FFFFFF */
+      --theme-text-secondary: rgb(201, 201, 201); /* #C9C9C9 */
+      --theme-text-muted: rgb(238, 238, 238); /* #EEEEEE */
+      --theme-text-accent: rgb(57, 158, 222); /* #399EDE */
+      
+      /* UI Elements */
+      --theme-accent: rgb(57, 158, 222); /* #399EDE */
+      --theme-muted: rgb(238, 238, 238); /* #EEEEEE */
+      --theme-border: rgb(107, 107, 107); /* #6B6B6B */
+    }
+ 
