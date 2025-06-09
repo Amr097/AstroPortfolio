@@ -1,0 +1,27 @@
+---
+import type { Experience } from '../types/experience';
+import experiences from '../constants/experiences.ts';
+---
+
+<div class="space-y-4">
+  {
+    experiences.map((exp: Experience) => (
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full">
+            <img
+              src={exp.logo || '/placeholder.svg'}
+              alt={`${exp.company} logo`}
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <h4 class="font-medium text-white">{exp.company}</h4>
+            <p class="text-sm text-[#9ca3af]">{exp.position}</p>
+          </div>
+        </div>
+        <span class="text-sm text-[#9ca3af]">{exp.period}</span>
+      </div>
+    ))
+  }
+</div>

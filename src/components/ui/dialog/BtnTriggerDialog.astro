@@ -1,0 +1,84 @@
+---
+import { VARIANT_CLASSES, SIZE_CLASSES, DEFAULT_ICON } from './constants';
+
+interface Props {
+  ariaLabel: string;
+  variant?: 'info' | 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  icon?: string;
+  modalId?: string;
+}
+
+const { ariaLabel, variant = 'info', size = 'md', icon, modalId } = Astro.props;
+
+const triggerId = `${modalId}-trigger`;
+
+const baseClasess = `group flex items-center justify-center rounded-full transition-colors duration-200 ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]}`;
+---
+
+<button
+  class={`dialog-trigger cursor-pointer ${baseClasess}`}
+  aria-label={ariaLabel}
+  id={triggerId}
+  data-modal-id={modalId}
+  data-trigger-id={triggerId}
+>
+  <slot>
+    <span set:html={icon || DEFAULT_ICON(size)} />
+  </slot>
+</button>
+
+<script define:vars={{ triggerId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById(triggerId);
+    if (trigger) {
+      const modalId = trigger.getAttribute('data-modal-id');
+      const modal = document.getElementById(modalId);
+
+      trigger.addEventListener('click', () => {
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+  });
+
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const modal = document.getElementById('experience-modal');
+  //   const openBtn = document.getElementById('experience-info-btn');
+
+  //   if (modal && openBtn) {
+  //     // Open modal
+  //     openBtn.addEventListener('click', () => {
+  //       modal.classList.remove('hidden');
+  //       modal.classList.add('flex');
+  //       document.body.style.overflow = 'hidden';
+  //     });
+
+  //     // Close modal
+  //     const closeModal = () => {
+  //       modal.classList.add('hidden');
+  //       modal.classList.remove('flex');
+  //       document.body.style.overflow = 'auto';
+  //     };
+
+  //     closeBtn.addEventListener('click', closeModal);
+
+  //     // Close on backdrop click
+  //     modal.addEventListener('click', (e) => {
+  //       if (e.target === modal) {
+  //         closeModal();
+  //       }
+  //     });
+
+  //     // Close on escape key
+  //     document.addEventListener('keydown', (e) => {
+  //       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+  //         closeModal();
+  //       }
+  //     });
+  //   }
+  // });
+</script>
