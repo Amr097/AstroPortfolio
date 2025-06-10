@@ -114,6 +114,8 @@
     @apply text-lg font-medium leading-snug md:text-xl;
   }
 
+ 
+
   /* Paragraph Styles */
   .text-lg {
     @apply text-lg leading-relaxed;
@@ -121,6 +123,11 @@
 
   .text-md {
     @apply text-[1rem] leading-relaxed;
+  }
+
+  .text-article{
+    @apply text-[1.04rem] leading-loose;
+
   }
 
   .text-sm {
