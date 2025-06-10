@@ -31,8 +31,8 @@
   --color-surface-100: rgb(238, 238, 238); /* #EEEEEE - lightest */
   --color-surface-200: rgb(192, 192, 192); /* #C0C0C0 */
   --color-surface-300: rgb(107, 107, 107); /* #6B6B6B */
-  --color-surface-700: rgb(16, 16, 16);   /* #101010 */ 
-  --color-surface-900: rgb(12, 12, 12);   /* #0C0C0C - darkest */      
+  --color-surface-700: rgb(25, 25, 25);   /* #101010 */ 
+  --color-surface-900: rgb(20, 20, 20);   /* #0C0C0C - darkest */      
   
   /* Text Hierarchy */
   --color-text-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
