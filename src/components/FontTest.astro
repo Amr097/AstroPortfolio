@@ -1,0 +1,41 @@
+---
+const fonts = {
+  Satoshi: {
+    weights: [400],
+    family: 'Satoshi, sans-serif',
+  },
+  ClashDisplay: {
+    weights: [400, 500, 600, 700],
+    family: 'ClashDisplay, sans-serif',
+  },
+  TestTiemposHeadline: {
+    weights: [400, 500, 600, 700],
+    family: 'TestTiemposHeadline , serif',
+  },
+};
+
+const sampleText = 'The quick brown fox jumps over the lazy dog';
+---
+
+<div class="space-y-12 p-8">
+  {
+    Object.entries(fonts).map(([name, { weights, family }]) => (
+      <div class="space-y-4">
+        <h2 class="heading-2 text-text-100">{name}</h2>
+        <div class="space-y-6">
+          {weights.map((weight) => (
+            <div class="space-y-2">
+              <p class="text-text-300 text-sm">Weight: {weight}</p>
+              <h1
+                style={`font-family: ${family}; font-weight: ${weight}; font-size: 2rem;`}
+                class="text-text-100 text-4xl"
+              >
+                {sampleText}
+              </h1>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>

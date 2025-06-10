@@ -1,170 +1,44 @@
-@layer reset {
-  /* Box sizing rules */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    font-family: 'Segoe UI';
-  }
-
-  /* Remove default margin */
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-wrap: balance;
-  }
-
-  p,
-  li {
-    max-width: 75ch;
-    text-wrap: pretty; /* Prevents orphans on lines */
-  }
-
-  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-  ul[role='list'],
-  ol[role='list'] {
-    list-style: none;
-  }
-
-  /* Set core root defaults */
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-
-  /* Set core body defaults */
-  body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-  }
-
-  /* A elements that don't have a class get default styles */
-  a:not([class]) {
-    text-decoration-skip-ink: auto;
-  }
-
-  /* Make images easier to work with */
-  img,
-  picture {
-    max-inline-size: 100%;
-    display: block;
-  }
-
-  /* Inherit fonts for inputs and buttons */
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
-
-  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-  @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-      scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-}
-
 /* Import Tailwind below reset layer to override reset styles  */
-
+@import './reset.css';
 @import 'tailwindcss';
 @import './themes/theme.css';
+@import './base.css';
 
-@layer base {
-  /* Typography Scale */
-  .heading-1 {
-    @apply text-3xl font-semibold leading-tight md:text-4xl;
-  }
+/* Satoshi */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 
-  .heading-2 {
-    @apply text-2xl font-semibold leading-tight md:text-3xl;
-  }
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
 
-  .heading-3 {
-    @apply text-xl font-medium leading-snug md:text-2xl;
-  }
+/* Lora */
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 
-  .heading-4 {
-    @apply text-lg font-medium leading-snug md:text-xl;
-  }
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
 
-  /* Paragraph Styles */
-  .text-lg {
-    @apply text-lg leading-relaxed;
-  }
-
-  .text-md {
-    @apply text-[1rem] leading-relaxed;
-  }
-
-  .text-article {
-    @apply text-[1.04rem] leading-[31px] tracking-wide;
-  }
-
-  .text-sm {
-    @apply text-sm leading-relaxed;
-  }
-
-  /* Label & Caption */
-  .label {
-    @apply text-sm font-medium;
-  }
-
-  .caption {
-    @apply text-xs leading-normal;
-  }
-
-  /* Base theme variables (light mode default) */
-  :root {
-    /* Base Colors */
-    --color-base: rgb(255, 255, 255); /* #FFFFFF */
-    --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
-    --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
-    --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
-    --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
-    --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
-
-    /* Text Hierarchy */
-    --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
-    --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
-    --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
-    --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
-
-    /* Accents & Borders */
-    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
-    --color-accent-800: rgb(20, 88, 236); /* #1458EC */
-    --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
-    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
-
-    /* Patterns */
-    --pattern-bg: url('/light-pattern.svg');
-  }
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/Lora-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
 }
 
 @theme {
@@ -183,6 +57,7 @@
   --color-text-100: var(--color-text-100);
   --color-text-200: var(--color-text-200);
   --color-text-300: var(--color-text-300);
+  --color-text-600: var(--color-text-600);
   --color-text-700: var(--color-text-700);
   --color-text-900: var(--color-text-900);
 

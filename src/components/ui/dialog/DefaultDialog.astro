@@ -10,7 +10,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 <!-- Modal Dialog -->
 <div
   id={modalId}
-  class="bg-base/50 fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+  class="bg-base/50 fixed inset-0 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
 >
   <div
     class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto rounded-xl border border-border-900 bg-surface-900`}
