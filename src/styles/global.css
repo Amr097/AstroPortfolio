@@ -4,6 +4,7 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    font-family: 'Segoe UI';
   }
 
   /* Remove default margin */
@@ -96,7 +97,6 @@
 @import './themes/theme.css';
 
 @layer base {
-
   /* Typography Scale */
   .heading-1 {
     @apply text-3xl font-semibold leading-tight md:text-4xl;
@@ -114,8 +114,6 @@
     @apply text-lg font-medium leading-snug md:text-xl;
   }
 
- 
-
   /* Paragraph Styles */
   .text-lg {
     @apply text-lg leading-relaxed;
@@ -125,9 +123,8 @@
     @apply text-[1rem] leading-relaxed;
   }
 
-  .text-article{
-    @apply text-[1.04rem] leading-loose;
-
+  .text-article {
+    @apply text-[1.04rem] leading-[31px] tracking-wide;
   }
 
   .text-sm {
@@ -143,34 +140,31 @@
     @apply text-xs leading-normal;
   }
 
-
   /* Base theme variables (light mode default) */
   :root {
+    /* Base Colors */
+    --color-base: rgb(255, 255, 255); /* #FFFFFF */
+    --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+    --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
+    --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
+    --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
+    --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
 
-  /* Base Colors */
-  --color-base: rgb(255, 255, 255); /* #FFFFFF */
-  --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
-  --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
-  --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
-  --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
-  --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
-  
-  /* Text Hierarchy */
-  --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
-  --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
-  --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
-  --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
-  
-  /* Accents & Borders */
-  --color-accent-500: rgb(57, 158, 222); /* #399EDE */
-  --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
-  --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+    /* Text Hierarchy */
+    --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
+    --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
+    --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
+    --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
 
-  /* Patterns */
-  --pattern-bg: url('/light-pattern.svg');
+    /* Accents & Borders */
+    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+    --color-accent-800: rgb(20, 88, 236); /* #1458EC */
+    --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
+    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
 
+    /* Patterns */
+    --pattern-bg: url('/light-pattern.svg');
   }
-  
 }
 
 @theme {
@@ -184,15 +178,16 @@
   --color-surface-400: var(--color-surface-400);
   --color-surface-700: var(--color-surface-700);
   --color-surface-900: var(--color-surface-900);
-  
+
   /* Text Theme Variables */
   --color-text-100: var(--color-text-100);
   --color-text-200: var(--color-text-200);
   --color-text-300: var(--color-text-300);
   --color-text-900: var(--color-text-900);
-  
+
   /* Accent & Border Variables */
   --color-accent-500: var(--color-accent-500);
+  --color-accent-800: var(--color-accent-800);
   --color-border-300: var(--color-border-300);
   --color-border-900: var(--color-border-900);
 }

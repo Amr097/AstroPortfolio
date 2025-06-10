@@ -9,11 +9,17 @@ interface Props {
   modalId?: string;
 }
 
-const { ariaLabel, variant = 'info', size = 'md', icon, modalId } = Astro.props;
+const {
+  ariaLabel,
+  variant = 'accent',
+  size = 'md',
+  icon,
+  modalId,
+} = Astro.props;
 
 const triggerId = `${modalId}-trigger`;
 
-const baseClasess = `group flex items-center justify-center rounded-full transition-colors duration-200 ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]}`;
+const baseClasess = `group flex  items-center justify-center border rounded-full transition-colors duration-200 ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]}`;
 ---
 
 <button

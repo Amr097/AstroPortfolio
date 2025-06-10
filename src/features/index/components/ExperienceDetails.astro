@@ -22,14 +22,18 @@ import experiences from '../constants/experiences.ts';
             <p class="mb-3 font-medium text-blue-400">{exp.position}</p>
 
             {exp.description && (
-              <p class="mb-4 text-sm leading-relaxed text-[#9ca3af]">{exp.description}</p>
+              <p class="mb-4 text-sm leading-relaxed text-[#9ca3af]">
+                {exp.description}
+              </p>
             )}
 
             {exp.technologies && exp.technologies.length > 0 && (
               <div class="mb-4">
-                <h4 class="mb-2 text-sm font-medium text-white">Technologies Used:</h4>
+                <h4 class="mb-2 text-sm font-medium text-white">
+                  Technologies Used:
+                </h4>
                 <div class="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
+                  {exp.technologies.map(tech => (
                     <span class="rounded-md bg-[#2a2a2a] px-2 py-1 text-xs text-[#9ca3af]">
                       {tech}
                     </span>
@@ -40,9 +44,11 @@ import experiences from '../constants/experiences.ts';
 
             {exp.achievements && exp.achievements.length > 0 && (
               <div>
-                <h4 class="mb-2 text-sm font-medium text-white">Key Achievements:</h4>
+                <h4 class="mb-2 text-sm font-medium text-white">
+                  Key Achievements:
+                </h4>
                 <ul class="space-y-1">
-                  {exp.achievements.map((achievement) => (
+                  {exp.achievements.map(achievement => (
                     <li class="flex items-start gap-2 text-sm text-[#9ca3af]">
                       <span class="mt-1 text-blue-400">•</span>
                       <span>{achievement}</span>

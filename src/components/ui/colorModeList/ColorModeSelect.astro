@@ -50,7 +50,8 @@ const modes = {
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        ></path>
       </svg>
 
       <svg
@@ -117,8 +118,12 @@ const modes = {
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const fabContainer = document.getElementById('fab-container') as HTMLElement | null;
-    const toggleButton = document.getElementById('fab-toggle') as HTMLElement | null;
+    const fabContainer = document.getElementById(
+      'fab-container'
+    ) as HTMLElement | null;
+    const toggleButton = document.getElementById(
+      'fab-toggle'
+    ) as HTMLElement | null;
 
     if (toggleButton && fabContainer) {
       toggleButton.addEventListener('click', () => {

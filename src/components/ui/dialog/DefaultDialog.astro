@@ -17,14 +17,21 @@ const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
     class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]`}
   >
     <!-- Modal Header -->
-    <div class="flex items-center justify-between border-b border-[#2a2a2a] p-6">
+    <div
+      class="flex items-center justify-between border-b border-[#2a2a2a] p-6"
+    >
       <h2 class="text-xl font-semibold text-white">{title}</h2>
       <button
         class="modal-close-btn flex h-8 w-8 items-center justify-center rounded-full bg-[#2a2a2a] transition-colors duration-200 hover:bg-[#3a3a3a]"
         aria-label="Close modal"
         data-modal-id={modalId}
       >
-        <svg class="h-4 w-4 text-[#9ca3af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          class="h-4 w-4 text-[#9ca3af]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -55,7 +62,7 @@ const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
       });
 
       // Close modal when clicking outside the content area
-      modal.addEventListener('click', (event) => {
+      modal.addEventListener('click', event => {
         if (event.target === modal) {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
@@ -65,7 +72,7 @@ const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
     }
   });
   // Close modal on Escape key press
-  document.addEventListener('keydown', (event) => {
+  document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       const modal = document.getElementById(modalId);
       if (modal && !modal.classList.contains('hidden')) {

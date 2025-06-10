@@ -6,15 +6,17 @@
   --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
   --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
   --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
-  
+
   /* Text Hierarchy */
   --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
   --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
   --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
   --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
-  
+
   /* Accents & Borders */
   --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+  --color-accent-800: rgb(20, 88, 236); /* #1458EC */
+
   --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
   --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
 

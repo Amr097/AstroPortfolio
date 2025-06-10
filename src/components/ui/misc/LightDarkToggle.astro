@@ -38,7 +38,9 @@ import LightIcon from '/light.svg?raw';
         return savedTheme;
       }
       // Default to system preference
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     }
 
     // Update icon visibility based on theme

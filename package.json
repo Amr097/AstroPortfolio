@@ -6,7 +6,8 @@
     "dev": "env-cmd -e development astro dev --port 3000 --host",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.0",
