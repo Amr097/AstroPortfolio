@@ -22,6 +22,9 @@ const { svg, label, class: className = '', size = 'md' } = Astro.props;
   class={`group relative flex items-center justify-center ${sizeClasses[size]} ${className}`}
   role="tooltip"
 >
-  <span set:html={svg} class={`flex items-center justify-center ${sizeClasses[size]}`} />
+  <span
+    set:html={svg}
+    class={`flex items-center justify-center ${sizeClasses[size]} hover:-translate-y-0.5`}
+  />
   <Tooltip {label} />
 </div>

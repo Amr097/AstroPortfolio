@@ -170,6 +170,7 @@
   /* Background Theme Variables */
   --background-image-pattern: var(--pattern-bg);
   --color-base: var(--color-base);
+  --color-inverse: var(--color-inverse);
   --color-surface-100: var(--color-surface-100);
   --color-surface-200: var(--color-surface-200);
   --color-surface-300: var(--color-surface-300);
