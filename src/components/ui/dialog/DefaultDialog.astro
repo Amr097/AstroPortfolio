@@ -1,48 +1,33 @@
 ---
 export interface Props {
   modalId: string;
-  title: string;
   maxWidth?: string;
 }
 
-const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
+const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 ---
 
 <!-- Modal Dialog -->
 <div
   id={modalId}
-  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+  class="bg-base/50 fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
 >
   <div
-    class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]`}
+    class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto rounded-xl border border-border-900 bg-surface-900`}
   >
     <!-- Modal Header -->
-    <div
-      class="flex items-center justify-between border-b border-[#2a2a2a] p-6"
-    >
-      <h2 class="text-xl font-semibold text-white">{title}</h2>
+    <div class="flex items-center justify-between p-6">
       <button
-        class="modal-close-btn flex h-8 w-8 items-center justify-center rounded-full bg-[#2a2a2a] transition-colors duration-200 hover:bg-[#3a3a3a]"
+        class="modal-close-btn bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
         aria-label="Close modal"
         data-modal-id={modalId}
       >
-        <svg
-          class="h-4 w-4 text-[#9ca3af]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+        ESC
       </button>
     </div>
 
     <!-- Modal Content -->
-    <div class="space-y-6 p-6">
+    <div class="space-y-6 px-3">
       <slot />
     </div>
   </div>
@@ -62,7 +47,7 @@ const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
       });
 
       // Close modal when clicking outside the content area
-      modal.addEventListener('click', event => {
+      modal.addEventListener('click', (event) => {
         if (event.target === modal) {
           modal.classList.add('hidden');
           modal.classList.remove('flex');
@@ -72,7 +57,7 @@ const { modalId, title, maxWidth = 'max-w-2xl' } = Astro.props;
     }
   });
   // Close modal on Escape key press
-  document.addEventListener('keydown', event => {
+  document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       const modal = document.getElementById(modalId);
       if (modal && !modal.classList.contains('hidden')) {
