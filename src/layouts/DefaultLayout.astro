@@ -14,38 +14,36 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
     <title>Amr Abdelghany - Home</title>
   </head>
 
-  <body class="bg-base relative flex flex-col text-white">
+  <body class="bg-base flex flex-col">
     <!-- Pattern -->
     <div
-      class="bg-pattern absolute inset-0 z-0 bg-size-[0.5rem] bg-blend-multiply"
+      class="bg-pattern absolute inset-0 -z-1 bg-size-[0.5rem] bg-blend-multiply"
     >
     </div>
     <!-- Overlay -->
     <div
-      class="from-base via-base/95 to-base absolute inset-0 z-0 bg-gradient-to-t"
+      class="from-base via-base/95 to-base absolute inset-0 -z-1 bg-gradient-to-t"
     >
     </div>
     <PaddingContainer>
-      <header
-        class="fixed top-0 right-8 flex items-center justify-end gap-4 py-8"
-      >
+      <header class="mt-6 flex items-center justify-end gap-4">
         <!-- <ColorModeSelect /> -->
         <LightDarkToggle />
       </header>
-
+      <!-- Main Content -->
       <slot />
     </PaddingContainer>
-  </body>
 
-  <!-- Footer -->
-  <footer class="mt-auto inline-block w-full py-8">
-    <p
-      class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400"
-    >
-      © 2025 • Built using
-      <a href="https://astro.build" class="text-orange-400 hover:underline"
-        >Astro</a
-      > by Amr Abdelghany
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer class="z-1 mt-auto inline-block w-full py-8">
+      <p
+        class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400"
+      >
+        © 2025 • Built using
+        <a href="https://astro.build" class="text-orange-400 hover:underline"
+          >Astro</a
+        > by Amr Abdelghany
+      </p>
+    </footer>
+  </body>
 </html>

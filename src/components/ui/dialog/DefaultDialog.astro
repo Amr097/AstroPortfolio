@@ -9,7 +9,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 
 <!-- Modal Dialog -->
 <div
-  class="bg-base/50 fixed inset-0 flex items-center justify-center p-4 opacity-100 backdrop-blur-sm"
+  class="bg-base/50 pointer-events-none fixed inset-0 -z-10 flex items-center justify-center p-4 opacity-0 backdrop-blur-sm"
   id={modalId}
 >
   <div
@@ -53,6 +53,9 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
       const closeBtn = document.getElementById(`${modalId}-close-btn`);
 
       const showModal = () => {
+        modal.classList.remove('-z-10');
+        modal.classList.add('z-10');
+
         // Add transitions only for opening
         modal.classList.add(
           'transition-opacity',
@@ -90,6 +93,9 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 
         resetModalScroll(modalId);
         document.body.style.overflow = 'auto';
+
+        modal.classList.remove('z-50');
+        modal.classList.add('-z-10');
       };
 
       // Expose showModal function globally
@@ -129,6 +135,9 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
         modal.classList.add('opacity-0', 'pointer-events-none');
 
         resetModalScroll(modalId);
+
+        modal.classList.remove('z-50');
+        modal.classList.add('-z-10');
         document.body.style.overflow = 'auto';
       }
     }
