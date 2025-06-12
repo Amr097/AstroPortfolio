@@ -9,12 +9,12 @@ import Achievements from './ExpereinceDetails/Achievements.astro';
   {
     experiences.map((exp, index) => (
       <div class="border-border-300 border-b pb-6 last:border-b-0 last:pb-0">
-        <div class="mb-4 flex items-start gap-4">
-          <div class="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-white">
+        <div class="mb-4 flex gap-4">
+          <div class="border-border-900 mx-auto mt-2 flex h-11 w-11 items-center overflow-hidden rounded-full border bg-white shadow-xs">
             <img
               src={exp.logo || '/placeholder.svg'}
               alt={`${exp.company} logo`}
-              class="h-full w-full object-contain"
+              class="mx-auto h-full w-full object-contain"
             />
           </div>
           <div class="flex-1">

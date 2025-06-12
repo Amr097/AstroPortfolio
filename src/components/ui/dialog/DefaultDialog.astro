@@ -9,7 +9,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 
 <!-- Modal Dialog -->
 <div
-  class="bg-base/50 pointer-events-none fixed inset-0 flex items-center justify-center p-4 opacity-0 backdrop-blur-sm"
+  class="bg-base/50 fixed inset-0 flex items-center justify-center p-4 opacity-100 backdrop-blur-sm"
   id={modalId}
 >
   <div
@@ -19,7 +19,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
     <!-- Modal Header -->
     <div class="flex items-center justify-between p-6">
       <button
-        class="bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
+        class="text-text-600 bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
         aria-label="Close modal"
         id={`${modalId}-close-btn`}
       >
@@ -28,13 +28,20 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
     </div>
 
     <!-- Modal Content -->
-    <div class="space-y-6 px-3 opacity-0" id={`${modalId}-content`}>
+    <div class="space-y-6 px-3 opacity-100" id={`${modalId}-content`}>
       <slot />
     </div>
   </div>
 </div>
 
 <script define:vars={{ modalId }}>
+  const resetModalScroll = (modalId) => {
+    const modalDialog = document.getElementById(`${modalId}-dialog`);
+    if (modalDialog) {
+      modalDialog.scrollTop = 0;
+    }
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById(modalId);
 
@@ -81,6 +88,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
         modal.classList.remove('opacity-100');
         modal.classList.add('opacity-0', 'pointer-events-none');
 
+        resetModalScroll(modalId);
         document.body.style.overflow = 'auto';
       };
 
@@ -120,6 +128,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
         modal.classList.remove('opacity-100');
         modal.classList.add('opacity-0', 'pointer-events-none');
 
+        resetModalScroll(modalId);
         document.body.style.overflow = 'auto';
       }
     }

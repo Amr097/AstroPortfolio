@@ -11,10 +11,10 @@ const { company, period, position, description } = Astro.props;
 
 <div class="flex-1">
   <div class="mb-2 flex items-center justify-between">
-    <h3 class="heading-4 text-text-100">{company}</h3>
-    <span class="text-text-700 text-sm">{period}</span>
+    <h3 class="heading-3 text-inverse">{company}</h3>
+    <span class="text-text-700 text-xs font-medium">{period}</span>
   </div>
-  <p class="text-accent-500 text-md mb-3 font-medium">
+  <p class="text-accent-500 mb-3 text-[0.825rem] font-medium">
     {position}
   </p>
   {
