@@ -41,7 +41,7 @@ h6 {
   }
 
   .text-article {
-    @apply text-[1.04rem] leading-[31px] tracking-wide font-medium;
+    @apply text-[1.1rem] leading-[31px] font-medium;
   }
 
   .text-sm {

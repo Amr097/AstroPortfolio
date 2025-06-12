@@ -1,6 +1,6 @@
 ---
 import type { Experience } from '../types/experience';
-import experiences from '../constants/experiences.ts';
+import experiences from '../../constants/experiences.ts';
 ---
 
 <div class="space-y-4">
@@ -8,19 +8,21 @@ import experiences from '../constants/experiences.ts';
     experiences.map((exp: Experience) => (
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-4">
-          <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded-full">
+          <div class="border-border-900 h-10 w-10 flex-shrink-0 overflow-hidden rounded-full border shadow-xs">
             <img
               src={exp.logo || '/placeholder.svg'}
               alt={`${exp.company} logo`}
               class="h-full w-full bg-white object-contain"
             />
           </div>
-          <div>
+          <div class="flex flex-col gap-1">
             <h5 class="text-inverse font-medium">{exp.company}</h5>
-            <p class="text-text-700 text-sm">{exp.position}</p>
+            <p class="text-accent-500 max-w-[17ch] text-[0.83rem] font-medium">
+              {exp.position}
+            </p>
           </div>
         </div>
-        <span class="text-text-700 text-sm">{exp.period}</span>
+        <span class="text-text-700 text-xs">{exp.period}</span>
       </div>
     ))
   }
