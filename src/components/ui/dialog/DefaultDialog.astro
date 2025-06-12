@@ -9,25 +9,26 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 
 <!-- Modal Dialog -->
 <div
+  class="bg-base/50 pointer-events-none fixed inset-0 flex items-center justify-center p-4 opacity-0 backdrop-blur-sm"
   id={modalId}
-  class="bg-base/50 fixed inset-0 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
 >
   <div
     class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto rounded-xl border border-border-900 bg-surface-900`}
+    id={`${modalId}-dialog`}
   >
     <!-- Modal Header -->
     <div class="flex items-center justify-between p-6">
       <button
-        class="modal-close-btn bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
+        class="bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
         aria-label="Close modal"
-        data-modal-id={modalId}
+        id={`${modalId}-close-btn`}
       >
         ESC
       </button>
     </div>
 
     <!-- Modal Content -->
-    <div class="space-y-6 px-3">
+    <div class="space-y-6 px-3 opacity-0" id={`${modalId}-content`}>
       <slot />
     </div>
   </div>
@@ -36,33 +37,89 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 <script define:vars={{ modalId }}>
   document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById(modalId);
-    const closeBtn = modal?.querySelector('.modal-close-btn');
 
-    if (modal && closeBtn) {
-      // Close modal on button click
-      closeBtn.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+    if (modal) {
+      // Move modal to body
+      document.body.appendChild(modal);
+
+      const modalContent = document.getElementById(`${modalId}-content`);
+      const closeBtn = document.getElementById(`${modalId}-close-btn`);
+
+      const showModal = () => {
+        // Add transitions only for opening
+        modal.classList.add(
+          'transition-opacity',
+          'duration-200',
+          'ease-in-out'
+        );
+        modalContent.classList.add('transition-opacity', 'duration-100');
+
+        // Show modal backdrop
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+
+        // Fade in content with delay
+        modalContent.classList.remove('opacity-0');
+        modalContent.classList.add('opacity-100');
+
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = () => {
+        // Remove transitions for instant closing
+        modal.classList.remove(
+          'transition-opacity',
+          'duration-200',
+          'ease-in-out'
+        );
+        modalContent.classList.remove('transition-opacity', 'duration-200');
+
+        // Hide immediately without effects
+        modalContent.classList.remove('opacity-100');
+        modalContent.classList.add('opacity-0');
+
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+
         document.body.style.overflow = 'auto';
-      });
+      };
 
-      // Close modal when clicking outside the content area
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-          document.body.style.overflow = 'auto';
-        }
-      });
+      // Expose showModal function globally
+      window[`show${modalId}`] = showModal;
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
     }
   });
-  // Close modal on Escape key press
+
+  // Close on Escape
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       const modal = document.getElementById(modalId);
-      if (modal && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+      if (modal && !modal.classList.contains('pointer-events-none')) {
+        const modalContent = document.getElementById(`${modalId}-content`);
+
+        // Remove transitions for instant closing
+        modal.classList.remove(
+          'transition-opacity',
+          'duration-200',
+          'ease-in-out'
+        );
+        modalContent.classList.remove('transition-opacity', 'duration-200');
+
+        // Hide immediately without effects
+        modalContent.classList.remove('opacity-100');
+        modalContent.classList.add('opacity-0');
+
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+
         document.body.style.overflow = 'auto';
       }
     }
