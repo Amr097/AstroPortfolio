@@ -33,19 +33,19 @@ h6 {
 
   /* Paragraph Styles */
   .text-lg {
-    @apply text-lg leading-relaxed;
+    @apply text-lg leading-relaxed font-medium;
   }
 
   .text-md {
-    @apply text-[1rem] leading-relaxed;
+    @apply text-[1rem] leading-relaxed font-medium;
   }
 
   .text-article {
-    @apply text-[1.04rem] leading-[31px] tracking-wide;
+    @apply text-[1.04rem] leading-[31px] tracking-wide font-medium;
   }
 
   .text-sm {
-    @apply text-sm leading-relaxed;
+    @apply text-sm leading-relaxed font-medium;
   }
 
   /* Label & Caption */
@@ -65,7 +65,10 @@ h6 {
     --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
     --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
     --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
-    --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
+
+
+    --color-surface-700: rgb(192, 192, 192); /* #C0C0C0  CARD HOVER*/
+    --color-surace-900: rgb(255, 254, 254); /* #6B6B6B - darkest && Card Base Color */
 
     /* Text Hierarchy */
     --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
@@ -76,7 +79,7 @@ h6 {
     /* Accents & Borders */
     --color-accent-500: rgb(57, 158, 222); /* #399EDE */
     --color-accent-800: rgb(20, 88, 236); /* #1458EC */
-    --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
+    --color-border-300: rgb(244 244 245); /* #F4F4F5 */
     --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
 
     /* Patterns */

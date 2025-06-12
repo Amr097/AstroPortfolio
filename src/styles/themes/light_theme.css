@@ -1,24 +1,34 @@
 [data-theme='light'] {
   /* Base Colors */
   --color-base: rgb(255, 255, 255); /* #FFFFFF */
+  --color-inverse: rgb(0, 0, 0); /* #000000 - inverse color for light theme */
+
   --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
   --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
   --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
   --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
-  --color-surface-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
+  --color-surface-700: rgb(252, 252, 252); /* #FAFAFA  CARD HOVER */ 
+  --color-surace-900: rgb(255, 254, 254); /* #6B6B6B - darkest && Card Base Color */
+
+
 
   /* Text Hierarchy */
-  --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
-  --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
-  --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
-  --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
+
+--color-text-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+--color-text-200: rgb(238, 238, 238); /* #EEEEEE */
+--color-text-300: rgb(201, 201, 201); /* #C9C9C9 */
+--color-text-600: rgb(82, 82, 91);    /* #52565B */
+--color-text-700: rgb(156, 163, 175); /* #9ca3af */
+--color-text-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
+
 
   /* Accents & Borders */
   --color-accent-500: rgb(57, 158, 222); /* #399EDE */
   --color-accent-800: rgb(20, 88, 236); /* #1458EC */
 
-  --color-border-300: rgb(201, 201, 201); /* #C9C9C9 */
-  --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+--color-border-300: rgb(229, 229, 229);   /* #E5E5E5 - stronger */
+--color-border-900:rgb(238, 238, 238);    /* #EEEEEE - subtle */
+
 
   /* Patterns */
   --pattern-bg: url('/light-pattern.svg');
