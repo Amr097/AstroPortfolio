@@ -1,4 +1,15 @@
 @layer base {
+
+    /* Scrollbar Styles */
+    .scrollbar-rounded {
+      &::-webkit-scrollbar-track {
+        @apply rounded-tr-full rounded-br-full;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-tr-full rounded-br-full;
+      }
+    }
     
 /* Base Styles */
 p {

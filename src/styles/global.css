@@ -4,6 +4,38 @@
 @import './themes/theme.css';
 @import './base.css';
 
+
+
+
+/*  CSS Customizations */
+* {
+    
+  &::-webkit-scrollbar {
+    @apply w-3;
+  }
+  
+  &::-webkit-scrollbar-track {
+    @apply bg-surface-900 border border-r-0 border-border-900;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+   @apply bg-surface-300 shadow-[inset_2px_2px_5px_0_rgba(204,204,204,0.24)];
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-surface-300 from-0% via-surface-300 via-75% to-surface-900 to-90% shadow-none;
+  }
+  
+}
+
+
+
+
+
+
+
+/* Import Fonts */
+
 /* Satoshi */
 @font-face {
   font-family: 'Satoshi';
@@ -41,6 +73,8 @@
   font-display: swap;
 }
 
+/* Tailwind Layers */
+
 @theme {
   /* Background Theme Variables */
   --background-image-pattern: var(--pattern-bg);
@@ -67,3 +101,4 @@
   --color-border-300: var(--color-border-300);
   --color-border-900: var(--color-border-900);
 }
+
