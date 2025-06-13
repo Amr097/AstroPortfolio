@@ -13,29 +13,29 @@ import Contact from '../features/index/components/Contact/Contact.astro';
 <DefaultLayout>
   <div class="">
     <!-- Grid Layout -->
-    <div class="mt-16 grid grid-cols-[1fr_1fr_1fr_1fr] grid-rows-4 gap-4">
+    <div class="mt-16 grid grid-cols-[1.85fr_1fr_1fr] grid-rows-2 gap-4">
       <!-- Welcome Card - Spans 2 columns -->
-      <CardContainer class="col-span-2 col-start-1 row-span-2">
+      <CardContainer class="col-start-1 row-start-1 flex items-center">
         <About />
       </CardContainer>
 
       <!-- Tech Stack Card -->
-      <CardContainer class="col-span-2 col-start-1 row-span-2 row-start-3">
+      <CardContainer class="col-start-1 row-start-2 flex items-center">
         <Technologies />
       </CardContainer>
 
       <!-- Services Card -->
-      <CardContainer class="col-span-1 col-start-3 row-span-4">
+      <CardContainer class="=ol-start-2 row-span-2">
         <Services />
       </CardContainer>
 
       <!-- Experience Card -->
-      <CardContainer class="col-span-1 col-start-4 row-span-2">
+      <CardContainer class="col-start-3 row-start-1">
         <Experience />
       </CardContainer>
 
       <!--  Contact Card -->
-      <CardContainer class="col-span-1 col-start-4 row-span-2">
+      <CardContainer class="col-start-3 row-start-2">
         <Contact />
       </CardContainer>
 
