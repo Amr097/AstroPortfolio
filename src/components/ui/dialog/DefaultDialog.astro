@@ -34,7 +34,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ modalId }}>
+<script define:vars={{ modalId }} defer>
   const resetModalScroll = (modalId) => {
     const modalDialog = document.getElementById(`${modalId}-dialog`);
     if (modalDialog) {

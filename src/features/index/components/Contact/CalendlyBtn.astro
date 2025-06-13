@@ -1,0 +1,44 @@
+---
+import DefaultBtn from '@/components/ui/btns/DefaultBtn.astro';
+import { Calendar } from '@lucide/astro';
+
+const calendlyUrl = 'https://calendly.com/amr-abdelghany097';
+---
+
+<DefaultBtn text="Schedule a call" icon={Calendar} id="calendly-btn" />
+
+<script define:vars={{ calendlyUrl }} defer>
+  const loadCalendlyAssets = () => {
+    // Load Calendly Widget JS
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    // Load Calendly CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(link);
+  };
+
+  const openCalendlyPopup = () => {
+    if (typeof Calendly !== 'undefined') {
+      Calendly.initPopupWidget({
+        url: calendlyUrl,
+      });
+    } else {
+      console.error('Calendly is not loaded');
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadCalendlyAssets();
+
+    const btn = document.getElementById('calendly-btn');
+    if (btn) {
+      btn.addEventListener('click', openCalendlyPopup);
+    }
+  });
+</script>

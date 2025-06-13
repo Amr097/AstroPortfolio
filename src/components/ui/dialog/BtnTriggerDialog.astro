@@ -34,7 +34,7 @@ const baseClasess = `group flex  items-center justify-center border rounded-full
   </slot>
 </button>
 
-<script define:vars={{ triggerId }}>
+<script define:vars={{ triggerId }} defer>
   document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.getElementById(triggerId);
     if (trigger) {
