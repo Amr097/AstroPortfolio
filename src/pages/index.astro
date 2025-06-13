@@ -7,6 +7,7 @@ import About from '../features/index/components/About.astro';
 import Technologies from '../features/index/components/Technologies.astro';
 import Services from '../features/index/components/Services.astro';
 import Experience from '../features/index/components/Expereince/Experience.astro';
+import Contact from '../features/index/components/Contact/Contact.astro';
 ---
 
 <DefaultLayout>
@@ -29,15 +30,14 @@ import Experience from '../features/index/components/Expereince/Experience.astro
       </CardContainer>
 
       <!-- Experience Card -->
-      <CardContainer class="col-span-1 col-start-4 row-span-4">
+      <CardContainer class="col-span-1 col-start-4 row-span-2">
         <Experience />
       </CardContainer>
 
-      <!-- Projects Card -->
-      <!-- <Card class="col-start-2 opacity-60">
-        <h3 class="text-lg font-semibold">Projects</h3>
-        <p class="mt-2 text-sm text-gray-400">Coming soon...</p>
-      </Card> -->
+      <!--  Contact Card -->
+      <CardContainer class="col-span-1 col-start-4 row-span-2">
+        <Contact />
+      </CardContainer>
 
       <!-- Projects Card -->
       <!-- <Card class="col-start-2 opacity-60">

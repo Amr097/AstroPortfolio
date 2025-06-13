@@ -1,0 +1,32 @@
+---
+import { Calendar, Mail } from '@lucide/astro';
+import DefaultBtn from '@/components/ui/btns/DefaultBtn.astro';
+---
+
+<div class="flex flex-col items-center gap-6 md:flex-row">
+  <div class="flex-1">
+    <div class="mb-6">
+      <h2 class="heading-2 text-inverse">Have a project in mind?</h2>
+      <h3 class="text-text-600 text-md">
+        let's <span class="text-accent-500 text-lg font-bold">communicate</span>
+        and discuss what you have in mind.
+      </h3>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <DefaultBtn
+        text="Email me"
+        icon={Mail}
+        href="mailto:your.email@example.com"
+      />
+
+      <DefaultBtn
+        text="Schedule a call"
+        icon={Calendar}
+        href="https://calendly.com/your-username"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  </div>
+</div>
