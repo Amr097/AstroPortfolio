@@ -15,7 +15,7 @@
   }
   
   &::-webkit-scrollbar-track {
-    @apply bg-surface-900 border border-r-0 border-border-900;
+    @apply bg-surface-900 border border-r-0 border-t-0 border-b-0 border-border-900;
   }
   
   &::-webkit-scrollbar-thumb {
