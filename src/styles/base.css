@@ -52,7 +52,7 @@ h6 {
   }
 
   .text-article {
-    @apply text-[1.1rem] leading-[31px] font-medium;
+    @apply text-[1.07rem] leading-[28px] font-medium;
   }
 
   .text-sm {

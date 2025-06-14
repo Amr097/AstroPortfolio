@@ -7,13 +7,13 @@ export const experiences: Experience[] = [
     period: "09/2024 — Present",
     logo: "/logos/nfssc.svg",
     description:
-      "Building internal KYC dashboard for document verification and management in Saudi Arabia's financial sector.",
+      "Building internal KYC (Know Your Customer) dashboard for document verification and management in Saudi Arabia's financial sector.",
     technologies: ["Vue.js", "React", "TypeScript", "Tailwind CSS", "Chart.js"],
     achievements: [
-      "Built KYC dashboard streamlining customer document verification",
-      "Collaborated with cross-functional teams to define frontend architecture",
-      "Developed reusable components and form validation systems",
-      "Created data visualization dashboards for user statistics",
+      "Built KYC dashboard automating customer document verification process",
+      "Participated in meetings to the business to define frontend code architecture",
+      "Translated user flows nto production-ready code",
+      "Contributed to the project ideation and design reviews",
     ],
   },
   {
