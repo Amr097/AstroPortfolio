@@ -2,44 +2,87 @@
 // bg-[#1a1a1a]
 ---
 
-<!--TITLE -->
-<div class="grid-rows-[repeat(2,max-content)_1fr]items-center mb-5 grid">
-  <h2
-    class="text-inverse heading-2 ml-2 grid w-full grid-cols-[max-content] grid-rows-2"
-  >
-    <span> Not just</span>
-    <span class="text-accent-500 inline-block px-3 font-bold capitalize">
-      web solutions</span
+<!--COMMUNICATION PHILOSOPHY SECTION -->
+<section
+  class="mb-5 grid grid-rows-[repeat(2,max-content)_1fr] items-center"
+  role="region"
+  tabindex="0"
+>
+  <header>
+    <h2
+      id="communication-heading"
+      class="text-inverse heading-2 ml-2 grid w-full grid-cols-[max-content] grid-rows-2"
+      aria-label="Not just web solutions, I build communication"
     >
-    <span> I build</span>
-    <span class="text-accent-500 inline-block px-3 font-bold uppercase"
-      >communication</span
-    >
-  </h2>
-
-  <div class="text-text-600 text-article p-4">
-    <p class="mb-4 text-sm">
-      “<span class="text-inverse">Communication</span> is the solvent of all problems
-      and is the foundation for
-      <span class="e line-through">personal</span>
-      software development.” – <span class="text-inverse italic"
-        >Peter Shepherd</span
+      <span aria-hidden="true">Not just</span>
+      <span
+        class="text-accent-500 inline-block px-3 font-bold capitalize"
+        aria-hidden="true"
       >
-    </p>
+        web solutions
+      </span>
+      <span aria-hidden="true">I build</span>
+      <span
+        class="text-accent-500 inline-block px-3 font-bold uppercase"
+        aria-hidden="true"
+      >
+        communication
+      </span>
+      <span class="sr-only">Not just web solutions, I build communication</span>
+    </h2>
+  </header>
+
+  <article
+    class="text-text-600 text-article p-4"
+    aria-labelledby="communication-heading"
+    role="article"
+  >
+    <header class="mb-4">
+      <blockquote class="text-sm" cite="Peter Shepherd" role="presentation">
+        <p>
+          <span aria-hidden="true">"</span>
+          <span class="text-inverse" aria-label="Communication emphasized"
+            >Communication</span
+          >
+          is the solvent of all problems and is the foundation for
+          <del class="line-through" aria-label="crossed out: personal"
+            >personal</del
+          >
+          software development.
+          <span aria-hidden="true">"</span>
+        </p>
+        <footer>
+          <cite class="text-inverse italic">
+            <span aria-label="Quote attribution">— Peter Shepherd</span>
+          </cite>
+        </footer>
+      </blockquote>
+    </header>
+
     <div
       class="scrollbar-rounded-md border-border-900 flex max-h-72 flex-col gap-4 overflow-y-scroll rounded-lg border px-2.5 py-1 shadow-xs"
+      role="region"
+      aria-labelledby="philosophy-content"
+      tabindex="0"
+      aria-label="Scrollable content about communication philosophy in software development"
     >
+      <h3 id="philosophy-content" class="sr-only">
+        My Communication Philosophy
+      </h3>
+
       <p>
-        I don’t see myself as just a developer who builds web services. I treat
+        I don't see myself as just a developer who builds web services. I treat
         every project as a collaboration.
       </p>
+
       <p>
         I try to understand the problem we are solving and stay in constant
         communication with both development team and the business side.
       </p>
+
       <p>
-        In past experiences, I’ve worked with small teams where the process
-        wasn’t always clear and the requirements were vague. I learned not to
+        In past experiences, I've worked with small teams where the process
+        wasn't always clear and the requirements were vague. I learned not to
         assume things will go as expected.
       </p>
 
@@ -49,7 +92,7 @@
       </p>
 
       <p>
-        If something doesn’t make sense, I ask. Worst case? I get an answer.
+        If something doesn't make sense, I ask. Worst case? I get an answer.
         Some of those questions actually helped uncover important things we were
         missing.
       </p>
@@ -60,5 +103,20 @@
         run, saves time and money for the business.
       </p>
     </div>
-  </div>
-</div>
+  </article>
+</section>
+
+<style>
+  /* Screen reader only utility class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

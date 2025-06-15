@@ -6,6 +6,7 @@ export interface Props {
   label: string;
   class?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  ariaLabel?: string;
 }
 
 const sizeClasses = {
@@ -15,12 +16,19 @@ const sizeClasses = {
   xl: 'h-12 w-12', // 48px
 } as const;
 
-const { svg, label, class: className = '', size = 'md' } = Astro.props;
+const {
+  svg,
+  label,
+  class: className = '',
+  size = 'md',
+  ariaLabel,
+} = Astro.props;
 ---
 
 <div
   class={`group relative flex items-center justify-center ${sizeClasses[size]} ${className}`}
-  role="tooltip"
+  aria-label={ariaLabel}
+  tabindex="0"
 >
   <span
     set:html={svg}

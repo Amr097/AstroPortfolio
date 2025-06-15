@@ -4,24 +4,61 @@ import DefaultBtn from '@/components/ui/btns/DefaultBtn.astro';
 import CalendlyBtn from './CalendlyBtn.astro';
 ---
 
-<div class="flex flex-col items-center gap-6 md:flex-row">
+<section 
+  class="flex flex-col items-center gap-6 md:flex-row"
+  role="region"
+  tabindex="0"
+>
   <div class="flex-1">
-    <div class="mb-6">
-      <h2 class="heading-2 text-inverse">Have a project in mind?</h2>
-      <h3 class="text-text-600 text-md">
-        let's <span class="text-accent-500 text-lg font-bold">communicate</span>
+    <header class="mb-6">
+      <h2 id="contact-heading" class="heading-2 text-inverse">
+        Have a project in mind?
+      </h2>
+      <p class="text-text-600 text-md">
+        Let's <span class="text-accent-500 text-lg font-bold" aria-label="communicate emphasized">communicate</span>
         and discuss what you have in mind.
-      </h3>
-    </div>
+      </p>
+    </header>
 
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2" role="group" aria-labelledby="contact-methods">
+      <h3 id="contact-methods" class="sr-only">Contact Methods</h3>
+
+      <aside class="mt-4" role="complementary" aria-label="Contact information note">
+        <p class="sr-only">
+          Two contact options are available: direct email for immediate communication, 
+          or schedule a meeting through Calendly for a discussion about your project needs.
+        </p>
+      </aside>
+      
       <DefaultBtn
         text="Email me"
         icon={Mail}
         href="mailto:your.email@example.com"
+        aria-label="Send email"
+        class="focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+        role="link"
       />
 
-      <CalendlyBtn />
+      <CalendlyBtn 
+        class="focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
+      />
     </div>
+
+   
   </div>
-</div>
+</section>
+
+<style>
+  /* Screen reader only utility class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowspace: nowrap;
+    border: 0;
+  }
+</style>

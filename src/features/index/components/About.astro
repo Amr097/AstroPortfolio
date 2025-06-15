@@ -3,21 +3,12 @@ import SocialButton from '@/components/ui/btns/SocialButton.astro';
 import { GithubIcon, Linkedin, Download } from '@lucide/astro';
 ---
 
-<section
-  class="flex flex-col items-center gap-6 md:flex-row"
-  tabindex="0"
-  aria-labelledby="about-title"
->
+<section class="flex flex-col items-center gap-6 md:flex-row" tabindex="0">
   <div class="flex-1">
     <header class="mb-5 flex items-center justify-between gap-4">
       <div>
-        <h1 class="heading-1 text-inverse" id="about-title">Amr Abdelghany</h1>
-        <p
-          class="text-accent-500 text-lg"
-          aria-label="Job title: Frontend Engineer"
-        >
-          Frontend Engineer
-        </p>
+        <h1 class="heading-1 text-inverse">Amr Abdelghany</h1>
+        <h2 class="text-accent-500 text-lg">Frontend Engineer</h2>
       </div>
 
       <a
@@ -35,7 +26,6 @@ import { GithubIcon, Linkedin, Download } from '@lucide/astro';
     </header>
 
     <div class="mb-4">
-      <h2 class="sr-only">About Amr Abdelghany</h2>
       <p class="text-text-600 text-md leading-relaxed">
         Specialized in building pixel-perfect interfaces for clients, ranging
         from established companies to innovative startups. My expertise lies in
@@ -73,18 +63,3 @@ import { GithubIcon, Linkedin, Download } from '@lucide/astro';
     </nav>
   </div>
 </section>
-
-<style>
-  /* Screen reader only utility class */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>
