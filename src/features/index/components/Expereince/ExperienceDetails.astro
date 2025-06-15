@@ -5,10 +5,13 @@ import Technologies from './ExpereinceDetails/Technologies.astro';
 import Achievements from './ExpereinceDetails/Achievements.astro';
 ---
 
-<div class="space-y-6 p-6">
+<ul class="space-y-6 p-6">
   {
     experiences.map((exp, index) => (
-      <div class="border-border-300 border-b pb-6 last:border-b-0 last:pb-0">
+      <li
+        class="border-border-300 border-b pb-6 last:border-b-0 last:pb-0"
+        tabindex="0"
+      >
         <div class="mb-4 flex flex-col gap-4 sm:flex-row">
           <div class="border-border-900 mt-2 h-11 w-11 rounded-full border bg-white shadow-xs">
             <img
@@ -34,7 +37,7 @@ import Achievements from './ExpereinceDetails/Achievements.astro';
             )}
           </div>
         </div>
-      </div>
+      </li>
     ))
   }
-</div>
+</ul>

@@ -8,25 +8,61 @@ import { BriefcaseBusiness } from '@lucide/astro';
 const modalId: string = 'experience-modal';
 ---
 
-<div class="relative">
-  <!-- Header with subtle info icon -->
-  <div class="mb-5 flex items-center justify-between">
+<section class="relative" role="region" tabindex="0">
+  <!-- Header with info button -->
+  <header class="mb-5 flex items-center justify-between">
     <div class="flex items-center gap-2">
       <BriefcaseBusiness class="text-inverse h-6 w-6" aria-hidden="true" />
-      <h4 class="text-inverse heading-4">Work experience</h4>
+      <h2 class="text-inverse heading-4">Work Experience</h2>
     </div>
 
     <BtnTriggerDialog
-      ariaLabel="Show expereince details"
+      ariaLabel="View detailed work experience information in modal dialog"
       variant="accent"
       {modalId}
+      role="button"
+      aria-haspopup="dialog"
+      aria-expanded="false"
     />
-  </div>
+  </header>
 
   <!-- Experience List -->
-  <ExperienceList />
-</div>
+  <div role="list" aria-label="Work experience timeline">
+    <ExperienceList />
+  </div>
+</section>
 
-<DefaultDialog {modalId} title="Experience Details" maxWidth="max-w-2xl">
+<!-- Experience Details Modal -->
+<DefaultDialog
+  {modalId}
+  title="Detailed Work Experience"
+  maxWidth="max-w-2xl"
+  aria-labelledby="experience-modal-title"
+  aria-describedby="experience-modal-description"
+  role="dialog"
+  aria-modal="true"
+>
+  <div id="experience-modal-title" class="sr-only">
+    Detailed Work Experience Information
+  </div>
+  <div id="experience-modal-description" class="sr-only">
+    Complete work history with detailed job descriptions, key responsibilities,
+    achievements, and technologies used for each position.
+  </div>
   <ExperienceDetails />
 </DefaultDialog>
+
+<style>
+  /* Screen reader only utility class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

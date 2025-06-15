@@ -9,17 +9,44 @@ interface Props {
 const { company, period, position, description } = Astro.props;
 ---
 
-<div class="flex-1">
-  <div class="mb-2 flex items-center justify-between">
-    <h3 class="heading-3 text-inverse">{company}</h3>
-    <span class="text-text-700 text-xs font-medium">{period}</span>
+<article class="flex-1" role="listitem">
+  <header class="mb-2 flex items-center justify-between">
+    <h3 class="heading-3 text-inverse">
+      {company}
+    </h3>
+    <time class="text-text-700 text-xs font-medium">
+      {period}
+    </time>
+  </header>
+
+  <div class="mb-3">
+    <h4 class="sr-only">Position</h4>
+    <p class="text-accent-500 text-[0.825rem] font-medium">
+      {position}
+    </p>
   </div>
-  <p class="text-accent-500 mb-3 text-[0.825rem] font-medium">
-    {position}
-  </p>
+
   {
     description && (
-      <p class="text-text-700 mb-4 text-sm leading-relaxed">{description}</p>
+      <div>
+        <h4 class="sr-only">Job Description</h4>
+        <p class="text-text-700 mb-4 text-sm leading-relaxed">{description}</p>
+      </div>
     )
   }
-</div>
+</article>
+
+<style>
+  /* Screen reader only utility class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

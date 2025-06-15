@@ -11,6 +11,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
 <div
   class="bg-base/50 pointer-events-none fixed inset-0 -z-10 flex items-center justify-center p-4 opacity-0 backdrop-blur-sm"
   id={modalId}
+  data-modal={modalId}
 >
   <div
     class={`max-h-[80vh] w-full ${maxWidth} overflow-y-auto scrollbar-rounded-xl rounded-xl border border-border-900 bg-surface-700`}
@@ -22,6 +23,7 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
         class="text-text-600 bg-surface-900 border-border-900 hover:border-border-300 hover:bg-surface-700 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border text-xs font-semibold transition-colors duration-200"
         aria-label="Close modal"
         id={`${modalId}-close-btn`}
+        data-modal-close
       >
         ESC
       </button>
@@ -34,112 +36,4 @@ const { modalId, maxWidth = 'max-w-2xl' } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ modalId }} defer>
-  const resetModalScroll = (modalId) => {
-    const modalDialog = document.getElementById(`${modalId}-dialog`);
-    if (modalDialog) {
-      modalDialog.scrollTop = 0;
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById(modalId);
-
-    if (modal) {
-      // Move modal to body
-      document.body.appendChild(modal);
-
-      const modalContent = document.getElementById(`${modalId}-content`);
-      const closeBtn = document.getElementById(`${modalId}-close-btn`);
-
-      const showModal = () => {
-        modal.classList.remove('-z-10');
-        modal.classList.add('z-10');
-
-        // Add transitions only for opening
-        modal.classList.add(
-          'transition-opacity',
-          'duration-200',
-          'ease-in-out'
-        );
-        modalContent.classList.add('transition-opacity', 'duration-100');
-
-        // Show modal backdrop
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('opacity-100');
-
-        // Fade in content with delay
-        modalContent.classList.remove('opacity-0');
-        modalContent.classList.add('opacity-100');
-
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closeModal = () => {
-        // Remove transitions for instant closing
-        modal.classList.remove(
-          'transition-opacity',
-          'duration-200',
-          'ease-in-out'
-        );
-        modalContent.classList.remove('transition-opacity', 'duration-200');
-
-        // Hide immediately without effects
-        modalContent.classList.remove('opacity-100');
-        modalContent.classList.add('opacity-0');
-
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0', 'pointer-events-none');
-
-        resetModalScroll(modalId);
-        document.body.style.overflow = 'auto';
-
-        modal.classList.remove('z-50');
-        modal.classList.add('-z-10');
-      };
-
-      // Expose showModal function globally
-      window[`show${modalId}`] = showModal;
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (event) => {
-          if (event.target === modal) {
-            closeModal();
-          }
-        });
-      }
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      const modal = document.getElementById(modalId);
-      if (modal && !modal.classList.contains('pointer-events-none')) {
-        const modalContent = document.getElementById(`${modalId}-content`);
-
-        // Remove transitions for instant closing
-        modal.classList.remove(
-          'transition-opacity',
-          'duration-200',
-          'ease-in-out'
-        );
-        modalContent.classList.remove('transition-opacity', 'duration-200');
-
-        // Hide immediately without effects
-        modalContent.classList.remove('opacity-100');
-        modalContent.classList.add('opacity-0');
-
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0', 'pointer-events-none');
-
-        resetModalScroll(modalId);
-
-        modal.classList.remove('z-50');
-        modal.classList.add('-z-10');
-        document.body.style.overflow = 'auto';
-      }
-    }
-  });
-</script>
+<script src="./dialogHandler.ts"></script>
