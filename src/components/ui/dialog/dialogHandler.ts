@@ -1,4 +1,10 @@
 import type { ModalElement, WindowWithModalFunctions } from "./types";
+import { trapFocus, getFocusableElements } from "./helpers/focusHelpers";
+import { resetModalScroll, addAriaAttributes } from "./helpers/dialogHelpers";
+
+// Modal state management
+let cleanup: (() => void) | null = null;
+let previousActiveElement: HTMLElement | null = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.querySelector<ModalElement>("[data-modal]");
@@ -8,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (modal && modalId) {
     // Move modal to body
     document.body.appendChild(modal);
+
+    // Add ARIA attributes for accessibility
+    addAriaAttributes(modal, modalId);
 
     const modalContent = document.getElementById(`${modalId}-content`);
     const closeBtn = document.getElementById(`${modalId}-close-btn`);
@@ -20,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const showModal = (): void => {
+      // Store the currently focused element
+      previousActiveElement = document.activeElement as HTMLElement;
+
       modal.classList.remove("-z-10");
       modal.classList.add("z-10");
 
@@ -36,9 +48,27 @@ document.addEventListener("DOMContentLoaded", () => {
       modalContent.classList.add("opacity-100");
 
       document.body.style.overflow = "hidden";
+
+      // Set up focus trapping
+      cleanup = trapFocus(modal);
+
+      // Focus the first focusable element after a short delay
+      setTimeout(() => {
+        const focusableElements = getFocusableElements(modal);
+        const firstFocusable = focusableElements[0];
+        if (firstFocusable) {
+          firstFocusable.focus();
+        }
+      }, 50);
     };
 
     const closeModal = (): void => {
+      // Clean up focus trap
+      if (cleanup) {
+        cleanup();
+        cleanup = null;
+      }
+
       // Remove transitions for instant closing
       modal.classList.remove(
         "transition-opacity",
@@ -59,6 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       modal.classList.remove("z-50");
       modal.classList.add("-z-10");
+
+      // Restore focus to the previously focused element
+      if (
+        previousActiveElement &&
+        typeof previousActiveElement.focus === "function"
+      ) {
+        previousActiveElement.focus();
+        previousActiveElement = null;
+      }
     };
 
     // Expose showModal function globally with proper typing
@@ -77,13 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const resetModalScroll = (modalId: string): void => {
-  const modalDialog = document.getElementById(`${modalId}-dialog`);
-  if (modalDialog) {
-    modalDialog.scrollTop = 0;
-  }
-};
-
 // Close on Escape
 document.addEventListener("keydown", (event: KeyboardEvent) => {
   if (event.key === "Escape") {
@@ -94,6 +126,12 @@ document.addEventListener("keydown", (event: KeyboardEvent) => {
       const modalContent = document.getElementById(`${modalId}-content`);
 
       if (modalContent) {
+        // Clean up focus trap
+        if (cleanup) {
+          cleanup();
+          cleanup = null;
+        }
+
         // Remove transitions for instant closing
         modal.classList.remove(
           "transition-opacity",
@@ -114,6 +152,15 @@ document.addEventListener("keydown", (event: KeyboardEvent) => {
         modal.classList.remove("z-50");
         modal.classList.add("-z-10");
         document.body.style.overflow = "auto";
+
+        // Restore focus when closing with Escape
+        if (
+          previousActiveElement &&
+          typeof previousActiveElement.focus === "function"
+        ) {
+          previousActiveElement.focus();
+          previousActiveElement = null;
+        }
       }
     }
   }
