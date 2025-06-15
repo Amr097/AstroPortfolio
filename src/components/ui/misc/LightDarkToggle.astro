@@ -8,7 +8,7 @@ import LightIcon from '/light.svg?raw';
   <button
     id="theme-toggle"
     class="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full shadow-sm"
-    aria-label="Toggle theme"
+    aria-label="Currently in light mode. Click to switch to dark mode"
   >
     <!-- Light Icon (visible in light mode) -->
     <div
@@ -50,6 +50,13 @@ import LightIcon from '/light.svg?raw';
       const toggleBtn = document.getElementById('theme-toggle');
 
       if (!lightIcon || !darkIcon || !toggleBtn) return;
+
+      const nextTheme = theme === 'light' ? 'dark' : 'light';
+      // Update button attributes
+      toggleBtn.setAttribute(
+        'aria-label',
+        `Currently in ${theme} mode. Click to switch to ${nextTheme} mode`
+      );
 
       if (theme === 'light') {
         // Show light icon (to switch to light mode)
