@@ -14,7 +14,7 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
     <title>Amr Abdelghany - Home</title>
   </head>
 
-  <body class="bg-base flex flex-col">
+  <body class="bg-base">
     <!-- Pattern -->
     <div
       class="bg-pattern absolute inset-0 -z-1 bg-size-[0.5rem] bg-blend-multiply"
@@ -25,26 +25,32 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
       class="from-base via-base/95 to-base absolute inset-0 -z-1 bg-gradient-to-t"
     >
     </div>
-    <PaddingContainer>
-      <header class="mt-6 flex items-center justify-end gap-4">
-        <!-- <ColorModeSelect /> -->
-        <LightDarkToggle />
-      </header>
-      <!-- Main Content -->
-      <main>
-        <slot />
-      </main>
-    </PaddingContainer>
 
-    <!-- Footer -->
-    <footer class="z-1 mt-auto inline-block w-full py-8">
-      <p
-        class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400"
-      >
-        © 2025 • Built by <span class="text-accent-500 font-[Lora] font-bold">
-          Amr Abdelghany</span
+    <div class="grid min-h-screen grid-rows-[max-content_1fr_max-content]">
+      <PaddingContainer>
+        <header class="mt-6 flex w-full items-center justify-end gap-4">
+          <!-- <ColorModeSelect /> -->
+          <LightDarkToggle />
+        </header>
+      </PaddingContainer>
+      <PaddingContainer class="grid items-center">
+        <!-- Main Content -->
+        <main>
+          <slot />
+        </main>
+      </PaddingContainer>
+      <!-- Footer -->
+      <footer class="z-1 mt-auto inline-block w-full py-8">
+        <p
+          class="inline-block w-full max-w-full px-8 text-right text-sm text-gray-400"
         >
-      </p>
-    </footer>
+          © 2025 • Built by <span
+            class="text-accent-500 font-[Lora] font-bold"
+          >
+            Amr Abdelghany</span
+          >
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
