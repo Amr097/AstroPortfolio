@@ -6,24 +6,20 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
 ---
 
 <DefaultLayout>
-  <div
-    class="mt-12 grid grid-cols-[max-content_max-content] items-center justify-center gap-2 p-6"
-  >
-    <div class="col-start-1">
-      <img
-        src="/angel3.png"
-        alt="Dark Angel"
-        class="float-animation h-xl drop-shadow-scheme invert-color-scheme hue-rotate-scheme z-10 h-full max-h-1/2 w-full max-w-2xl object-cover"
-      />
-    </div>
-    <div>
-      <h1 class="text-inverse text-center text-7xl leading-tight font-bold">
-        Summoning Solutions, <br />
-        Changing Hearts
+  <div class="mt-12 grid grid-cols-[1fr_max-content] gap-2 p-6">
+    <div class="col-span-1 col-start-1 flex flex-col items-start justify-start">
+      <h1 class="text-inverse text-start text-7xl leading-tight font-bold">
+        <span class="text-[#F28C23]">Summon</span> Solutions, <br />
+        Change <span class="text-[#E26002]">Hearts</span>.
       </h1>
 
+      <h3 class="heading-4 mt-5 max-w-[45ch] leading-normal">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit soluta
+        cupiditate voluptates ad nam sint, nisi quae optio nesciunt pariatur
+        voluptatem vitae autem molestiae id at ducimus odit architecto culpa!
+      </h3>
       <div
-        class="col-span-2 mt-8 grid grid-cols-3 grid-rows-1 items-center justify-start gap-4"
+        class="col-span-1 col-start-1 mt-5 grid grid-cols-3 grid-rows-1 items-center justify-start gap-4"
       >
         <BtnLink
           text="Email me"
@@ -33,21 +29,25 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
           class="focus:ring-accent-500 focus:ring-2 focus:ring-offset-2 focus:outline-none"
           role="link"
         />
-        <BtnLink
-          text="Email me"
-          icon={Mail}
-          href="mailto:your.email@example.com"
-          aria-label="Send email"
-          class="focus:ring-accent-500 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-          role="link"
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="float-moon-animation h-full rounded-l-full bg-black invert-0">
+        <img
+          src="/darkAngel.png"
+          alt="Dark Angel"
+          class="float-animation drop-shadow-scheme z-10 h-[600px] w-[340px] object-cover hue-rotate-180 invert-0"
         />
-        <BtnLink
-          text="Email me"
-          icon={Mail}
-          href="mailto:your.email@example.com"
-          aria-label="Send email"
-          class="focus:ring-accent-500 focus:ring-2 focus:ring-offset-2 focus:outline-none"
-          role="link"
+      </div>
+
+      <div
+        class="float-moon-animation invert-color-scheme h-full rounded-r-full bg-white"
+      >
+        <img
+          src="/lightAngel.png"
+          alt="Dark Angel"
+          class="float-animation z-10 h-[600px] w-[340px] object-cover hue-rotate-90 invert-0"
         />
       </div>
     </div>
@@ -59,6 +59,10 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
     animation: float 4s ease-in-out infinite;
   }
 
+  .float-moon-animation {
+    animation: float-moon 4s ease-in-out infinite;
+  }
+
   @keyframes float {
     0% {
       transform: translate(-0, 0);
@@ -68,6 +72,18 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
     }
     100% {
       transform: translate(0, 0);
+    }
+  }
+
+  @keyframes float-moon {
+    0% {
+      transform: translate(-0, -2.5%);
+    }
+    50% {
+      transform: translate(0, -5%);
+    }
+    100% {
+      transform: translate(0, -2.5%);
     }
   }
 </style>
