@@ -23,6 +23,10 @@
 
     /* Patterns */
     --pattern-bg: url('/dark-pattern.svg');
+
+    --invert-color-scheme: 0;
+    --drop-shadow-scheme: 0.1rem 0 0.25rem #fff;
+
   }
 }
 
@@ -56,4 +60,8 @@
 
   /* Patterns */
   --pattern-bg: url('/dark-pattern.svg');
+
+  --invert-color-scheme: 98%;
+  --drop-shadow-scheme: 0.15rem 0 0.2rem rgb(255, 255, 255, 0.5);
+
 }

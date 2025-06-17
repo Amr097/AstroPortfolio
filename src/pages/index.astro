@@ -1,15 +1,36 @@
 ---
 import '../styles/global.css';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-
-// Import SVG as string
-const LightDarkSvg = await import('/ld.svg?raw').then((mod) => mod.default);
+import LightAngel from '/dark.svg?raw';
+import DarkAngel from '/darkAngel.svg?raw';
 ---
 
 <DefaultLayout>
-  <div
-    class="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full"
-  >
-    <Fragment set:html={LightDarkSvg} />
+  <div class="mt-12 grid grid-cols-[1fr_max-content] p-6">
+    <div class="relative col-start-2 h-[30rem] w-[30rem]">
+      <img
+        src="/angel1.png"
+        alt="Dark Angel"
+        class="float-animation h-xl drop-shadow-scheme invert-color-scheme absolute top-1/2 left-1/2 z-10 h-[14rem] w-[14rem] -translate-x-1/2 -translate-y-1/2 rotate-y-180 object-cover"
+      />
+    </div>
   </div>
 </DefaultLayout>
+
+<style>
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, -47.5%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+</style>

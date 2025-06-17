@@ -28,4 +28,9 @@
 
   /* Patterns */
   --pattern-bg: url('/light-pattern.svg');
+
+  --invert-color-scheme: 98%;
+  --drop-shadow-scheme: 0.1rem 0 0.1rem rgb(0, 0, 0, 1);
+
+
 }

@@ -100,6 +100,9 @@
   --color-accent-800: var(--color-accent-800);
   --color-border-300: var(--color-border-300);
   --color-border-900: var(--color-border-900);
+
+  --invert-color-scheme: var(--invert-color-scheme);
+  --drop-shadow-scheme: var(--drop-shadow-scheme);
 }
 
 

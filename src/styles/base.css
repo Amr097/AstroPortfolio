@@ -105,5 +105,9 @@ h6 {
 
     /* Patterns */
     --pattern-bg: url('/light-pattern.svg');
+
+    --invert-color-scheme: 0;
+    --drop-shadow-scheme: 0.1rem 0 0.25rem #fff;
+
   }
 }
