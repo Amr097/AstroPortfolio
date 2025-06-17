@@ -78,40 +78,12 @@ h6 {
     @apply text-xs leading-normal;
   }
 
-  /* Base theme variables (light mode default) */
-  :root {
-    /* Base Colors */
-    --color-base: rgb(255, 255, 255); /* #FFFFFF */
-    --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
-    --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
-    --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
-    --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
-
-
-    --color-surface-700: rgb(192, 192, 192); /* #C0C0C0  CARD HOVER*/
-    --color-surace-900: rgb(255, 254, 254); /* #6B6B6B - darkest && Card Base Color */
-
-    /* Text Hierarchy */
-    --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
-    --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
-    --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
-    --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
-
-    /* Accents & Borders */
-    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
-    --color-accent-800: rgb(20, 88, 236); /* #1458EC */
-    --color-border-300: rgb(244 244 245); /* #F4F4F5 */
-    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
-
-    /* Patterns */
-    --pattern-bg: url('/light-pattern.svg');
-
-
-   /* Image Filters */
-    --invert-color-scheme: 0;
-    --drop-shadow-scheme: 0.1rem 0 0.25rem #fff;
-    --hue-rotate-scheme: 100deg;
-
-
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
+
 }

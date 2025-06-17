@@ -1,3 +1,41 @@
+  /* Base theme variables (light mode default) */
+  :root {
+    /* Base Colors */
+    --color-base: rgb(255, 255, 255); /* #FFFFFF */
+    --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
+    --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
+    --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
+    --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
+
+
+    --color-surface-700: rgb(192, 192, 192); /* #C0C0C0  CARD HOVER*/
+    --color-surace-900: rgb(255, 254, 254); /* #6B6B6B - darkest && Card Base Color */
+
+    /* Text Hierarchy */
+    --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
+    --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
+    --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
+    --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
+
+    /* Accents & Borders */
+    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
+    --color-accent-800: rgb(20, 88, 236); /* #1458EC */
+    --color-border-300: rgb(244 244 245); /* #F4F4F5 */
+    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+
+    /* Patterns */
+    --pattern-bg: url('/light-pattern.svg');
+
+
+   /* Image Filters */
+    --invert-color-scheme: 0;
+    --drop-shadow-scheme: 0.1rem 0 0.25rem #fff;
+    --hue-rotate-scheme: 100deg;
+
+
+  }
+
+
 [data-theme='light'] {
   /* Base Colors - Clean, modern foundation */
   --color-base: rgb(250, 250, 250); /* #ffffff - crisp white base */
@@ -18,9 +56,15 @@
   --color-text-700: rgb(100, 116, 139); /* #64748b - lighter medium */
   --color-text-900: rgb(30, 41, 59); /* #1e293b - dark slate */
 
-  /* Accents - Modern, vibrant blue */
-  --color-accent-500: rgb(59, 130, 246); /* #3b82f6 - beautiful blue */
-  --color-accent-800: rgb(30, 64, 175); /* #1e40af - deeper blue */
+  /* Accents  */
+  --color-accent-300: #FBB004; 
+  --color-accent-500: #F28C23; 
+  --color-accent-800: #E26002;
+  --gradient-accent: linear-gradient(
+    45deg,
+    var(--color-accent-300),
+    var(--color-accent-800)
+  );
 
   /* Borders - Subtle, clean lines */
   --color-border-300: rgb(203, 213, 225); /* #cbd5e1 - visible border */
