@@ -103,6 +103,7 @@
 
   --invert-color-scheme: var(--invert-color-scheme);
   --drop-shadow-scheme: var(--drop-shadow-scheme);
+  --hue-rotate-scheme: var(--hue-rotate-scheme);
 }
 
 

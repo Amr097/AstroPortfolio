@@ -29,8 +29,10 @@
   /* Patterns */
   --pattern-bg: url('/light-pattern.svg');
 
-  --invert-color-scheme: 98%;
-  --drop-shadow-scheme: 0.1rem 0 0.1rem rgb(0, 0, 0, 1);
+     /* Image Filters */
+  --invert-color-scheme: 0;
+  --drop-shadow-scheme: 0.2rem 0 0.2rem rgb(0, 0, 0, 1);
+  --hue-rotate-scheme: 100deg;
 
 
 }

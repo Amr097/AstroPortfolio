@@ -2,20 +2,20 @@
 <div class="relative">
   <button
     id="theme-toggle"
-    class="border-inverse relative flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 shadow-lg transition-all duration-300 perspective-dramatic"
+    class="border-inverse relative h-14 w-14 cursor-pointer overflow-hidden rounded-full border-2 shadow-lg transition-all duration-300 perspective-dramatic"
     aria-label="Currently in light mode. Click to switch to dark mode"
   >
     <div
       class="absolute inset-0 m-auto h-full w-full -scale-x-100 overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
-        src="/darkness.svg"
-        class="image-2 h-full w-full rounded-full rounded-l-none object-cover"
+        src="/fire.svg"
+        class="image-2 h-full w-full rounded-full rounded-l-none"
       />
     </div>
 
     <div
-      id="dark-icon"
+      id="light-icon"
       class="rotate-y absolute inset-0 m-auto h-full w-full rotate-y-180 overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
@@ -28,13 +28,13 @@
       class="absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
-        src="/fire.svg"
-        class="image-2 h-full w-full rounded-full rounded-l-none"
+        src="/darkness.svg"
+        class="image-2 h-full w-full rounded-full rounded-l-none object-cover"
       />
     </div>
 
     <div
-      id="light-icon"
+      id="dark-icon"
       class="absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
