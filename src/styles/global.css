@@ -98,8 +98,10 @@
   --color-text-900: var(--color-text-900);
 
   /* Accent & Border Variables */
+  --color-accent-300: var(--color-accent-300);
   --color-accent-500: var(--color-accent-500);
   --color-accent-800: var(--color-accent-800);
+
   --color-border-300: var(--color-border-300);
   --color-border-900: var(--color-border-900);
 
@@ -115,6 +117,10 @@
   
   --translate-hero-light: var(--hero-light-translate-y);
   --translate-hero-dark: var(--hero-dark-translate-y);
+
+  /*Shadows */
+  --shadow-accent: var(--shadow-accent);  
+
 }
 
 

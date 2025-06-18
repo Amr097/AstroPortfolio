@@ -3,7 +3,7 @@ import type { DialogVariant, DialogSize, IconSize } from "./types";
 export const VARIANT_CLASSES: Record<DialogVariant, string> = {
   info: "bg-[#2a2a2a] hover:bg-[#3a3a3a] text-[#9ca3af] hover:text-white",
   accent:
-    "bg-accent-500/85 text-white/85 hover:bg-accent-500/95 hover:text-white border-transparent hover:border-border-300",
+    "bg-accent-800/85 text-white/85 hover:bg-accent-500/95 hover:text-white border-transparent hover:border-border-300",
   secondary: "bg-gray-600 hover:bg-gray-700 text-white",
 };
 
