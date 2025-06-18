@@ -86,6 +86,8 @@
   --color-surface-400: var(--color-surface-400);
   --color-surface-700: var(--color-surface-700);
   --color-surface-900: var(--color-surface-900);
+  --color-hero-image-dark: var(--hero-image-dark);
+  --color-hero-image-light: var(--hero-image-light);
 
   /* Text Theme Variables */
   --color-text-100: var(--color-text-100);
@@ -101,9 +103,18 @@
   --color-border-300: var(--color-border-300);
   --color-border-900: var(--color-border-900);
 
-  --invert-color-scheme: var(--invert-color-scheme);
-  --drop-shadow-scheme: var(--drop-shadow-scheme);
-  --hue-rotate-scheme: var(--hue-rotate-scheme);
+  /*Image Filters */  
+  --invert-color-light-scheme: var(--invert-color-light-scheme);
+  --drop-shadow-light-scheme: var(--drop-shadow-light-scheme);
+  --hue-rotate-light-scheme: var(--hue-rotate-light-scheme);
+  --invert-color-dark-scheme: var(--invert-color-dark-scheme);
+  --drop-shadow-dark-scheme: var(--drop-shadow-dark-scheme);
+  --hue-rotate-dark-scheme: var(--hue-rotate-dark-scheme);
+  --gradient-accent: var(--gradient-accent);
+  --sepia-filter-scheme: var(--sepia-filter-scheme);
+  
+  --translate-hero-light: var(--hero-light-translate-y);
+  --translate-hero-dark: var(--hero-dark-translate-y);
 }
 
 

@@ -1,38 +1,56 @@
   /* Base theme variables (light mode default) */
   :root {
-    /* Base Colors */
-    --color-base: rgb(255, 255, 255); /* #FFFFFF */
-    --color-surface-100: rgb(255, 255, 255); /* #FFFFFF - lightest */
-    --color-surface-200: rgb(238, 238, 238); /* #EEEEEE */
-    --color-surface-300: rgb(201, 201, 201); /* #C9C9C9 */
-    --color-surface-400: rgb(192, 192, 192); /* #C0C0C0 */
+  /* Base Colors - Clean, modern foundation */
+  --color-base: rgb(250, 250, 250); /* #ffffff - crisp white base */
+  --color-inverse: rgb(15, 23, 42); /* #0f172a - rich dark slate */
+
+  /* Surface Colors - Subtle, elegant grays */
+  --color-surface-100: rgb(255, 255, 255); /* #ffffff - pure white */
+  --color-surface-200: rgb(248, 250, 252); /* #f8fafc - lightest gray */
+  --color-surface-300: rgb(203, 213, 225); /* #cbd5e1 - light gray */
+  --color-surface-700: rgb(249, 250, 251); /* #f9fafb - card hover */
+  --color-surface-900: rgb(248, 250, 252); /* #f8fafc - card base */
+
+  /* Text Hierarchy - Balanced, readable slate tones */
+  --color-text-100: rgb(255, 255, 255); /* #ffffff - white text */
+  --color-text-200: rgb(248, 250, 252); /* #f8fafc - very light */
+  --color-text-300: rgb(148, 163, 184); /* #94a3b8 - light slate */
+  --color-text-600: rgb(71, 85, 105); /* #475569 - medium slate (4.9:1 contrast) */
+  --color-text-700: rgb(100, 116, 139); /* #64748b - lighter medium */
+  --color-text-900: rgb(30, 41, 59); /* #1e293b - dark slate */
+
+  /* Accents  */
+  --color-accent-300: #FBB004; 
+  --color-accent-500: #F28C23; 
+  --color-accent-800: #E26002;
 
 
-    --color-surface-700: rgb(192, 192, 192); /* #C0C0C0  CARD HOVER*/
-    --color-surace-900: rgb(255, 254, 254); /* #6B6B6B - darkest && Card Base Color */
+  /* Greadients */
+  --gradient-accent: linear-gradient(
+    45deg,
+    var(--color-accent-300),
+    var(--color-accent-800)
+  );
 
-    /* Text Hierarchy */
-    --color-text-100: rgb(0, 0, 0); /* #000000 - darkest */
-    --color-text-200: rgb(107, 107, 107); /* #6B6B6B */
-    --color-text-300: rgb(192, 192, 192); /* #C0C0C0 */
-    --color-text-900: rgb(238, 238, 238); /* #EEEEEE - lightest */
+  /* Borders - Subtle, clean lines */
+  --color-border-300: rgb(203, 213, 225); /* #cbd5e1 - visible border */
+  --color-border-900: rgb(226, 232, 240); /* #e2e8f0 - subtle border */
 
-    /* Accents & Borders */
-    --color-accent-500: rgb(57, 158, 222); /* #399EDE */
-    --color-accent-800: rgb(20, 88, 236); /* #1458EC */
-    --color-border-300: rgb(244 244 245); /* #F4F4F5 */
-    --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
+  /* Patterns */
+  --pattern-bg: url('/light-pattern.svg');
 
-    /* Patterns */
-    --pattern-bg: url('/light-pattern.svg');
+    /* Image Filters */
+  --invert-color-light-scheme: 0;
+  --drop-shadow-light-scheme: 2rem 0 0.5rem rgb(0, 0, 0, 1);
+  --hue-rotate-light-scheme: 120deg;
 
-
-   /* Image Filters */
-    --invert-color-scheme: 0;
-    --drop-shadow-scheme: 0.1rem 0 0.25rem #fff;
-    --hue-rotate-scheme: 100deg;
+  --invert-color-dark-scheme: 100%;
+  --drop-shadow-dark-scheme: 0 0 0 rgb(0, 0, 0, 0);
+  --hue-rotate-dark-scheme: -90deg;
 
 
+  --hero-image-light: rgba(248, 250, 252, 0.0);
+  --hero-image-dark: rgba(0, 0, 0);
   }
 
 
@@ -60,6 +78,9 @@
   --color-accent-300: #FBB004; 
   --color-accent-500: #F28C23; 
   --color-accent-800: #E26002;
+
+
+  /* Greadients */
   --gradient-accent: linear-gradient(
     45deg,
     var(--color-accent-300),
@@ -73,10 +94,23 @@
   /* Patterns */
   --pattern-bg: url('/light-pattern.svg');
 
-     /* Image Filters */
-  --invert-color-scheme: 0;
-  --drop-shadow-scheme: 0.2rem 0 0.2rem rgb(0, 0, 0, 1);
-  --hue-rotate-scheme: 100deg;
+    /* Image Filters */
+  --invert-color-light-scheme: 0;
+  --drop-shadow-light-scheme: 0.2rem 0 0.2rem rgb(0, 0, 0, 1);
+  --hue-rotate-light-scheme: 120deg;
+
+  --invert-color-dark-scheme: 100%;
+  --drop-shadow-dark-scheme: 0.2rem 0 0.2rem rgb(67,29,5);
+  --hue-rotate-dark-scheme: -90deg;
+  --sepia-filter-scheme: 25%;
+
+  --hero-light-translate-y: 0;
+  --hero-dark-translate-y: 7px;
+
+
+  --hero-image-light: rgba(248, 250, 252, 0.0);
+  --hero-image-dark: rgb(15, 23, 22);
+
 
 
 }

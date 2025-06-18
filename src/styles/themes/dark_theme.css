@@ -55,9 +55,39 @@
   --color-text-700: rgb(156, 163, 175); /* #9ca3af */
   --color-text-900: rgb(107, 107, 107); /* #6B6B6B - darkest */
 
-  /* Accents & Borders */
-  --color-accent-500: rgb(57, 158, 222); /* #399EDE */
-  --color-accent-800: rgb(20, 88, 236); /* #1458EC */
+  /* 74028C
+951BB8
+390176
+7F0295
+B964BF
+
+E061E7
+D93FF6
+3F0D48
+A704A0
+9B22B8
+800E9C
+23016F
+C134DB
+C134DB
+3E0179
+3E0179
+E356F6 */
+
+   /* Accents  */
+   --color-accent-300: #B964BF; 
+   --color-accent-500: #951BB8; 
+   --color-accent-800: #74028C;
+
+   
+  /* Greadients */
+  --gradient-accent: linear-gradient(
+    45deg,
+    var(--color-accent-300),
+    var(--color-accent-800)
+  );
+
+
   --color-border-300: rgb(238, 238, 238, 0.7); /* #EEEEEE */
   --color-border-900: rgb(107, 107, 107); /* #6B6B6B */
 
@@ -65,7 +95,19 @@
   --pattern-bg: url('/dark-pattern.svg');
 
     /* Image Filters */
-  --invert-color-scheme: 100%;
-  --drop-shadow-scheme: 0.2rem 0 0.5rem rgb(255, 255, 255, 1);
-  --hue-rotate-scheme: 180deg;
+  --invert-color-light-scheme: 100%;
+  --drop-shadow-light-scheme: 0.2rem 0 0.5rem rgb(250,210,251, 1);
+  --hue-rotate-light-scheme: 180deg;
+
+  --invert-color-dark-scheme: 0;
+  --drop-shadow-dark-scheme: 0.2rem 0 0.2rem rgb(255, 255, 255, 0.75);
+  --hue-rotate-dark-scheme: 0deg;
+  --sepia-filter-scheme: 0;
+
+  --hero-light-translate-y: 7px;
+  --hero-dark-translate-y: 0;
+
+  --hero-image-light: rgba(255, 255, 255, 1);
+  --hero-image-dark: rgba(0, 0, 0, 0);
+
 }
