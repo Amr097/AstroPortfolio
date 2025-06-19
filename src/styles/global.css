@@ -78,6 +78,8 @@
 @theme {
   /* Background Theme Variables */
   --background-image-pattern: var(--pattern-bg);
+  --background-image-wing: var(--wing-icon-url);
+
   --color-base: var(--color-base);
   --color-inverse: var(--color-inverse);
   --color-surface-100: var(--color-surface-100);
@@ -119,7 +121,9 @@
   --translate-hero-dark: var(--hero-dark-translate-y);
 
   /*Shadows */
-  --shadow-accent: var(--shadow-accent);  
+  --shadow-accent: var(--shadow-accent);
+
+  
 
 }
 

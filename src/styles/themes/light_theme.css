@@ -101,8 +101,10 @@
   --color-border-300: #FBB004; /* #cbd5e1 - visible border */
   --color-border-900: rgb(226, 232, 240); /* #e2e8f0 - subtle border */
 
-  /* Patterns */
+  /* images */
   --pattern-bg: url('/light-pattern.svg');
+  --wing-icon-url: url('/angel-wing.svg');
+
 
     /* Image Filters */
   --invert-color-light-scheme: 0;
@@ -115,7 +117,7 @@
   --sepia-filter-scheme: 25%;
 
   --hero-light-translate-y: 0;
-  --hero-dark-translate-y: 7px;
+  --hero-dark-translate-y: 4.5px;
 
 
   --hero-image-light: rgba(248, 250, 252, 0.0);

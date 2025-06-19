@@ -8,17 +8,16 @@ interface Props {
 const { text, icon: Icon, ...attributes } = Astro.props;
 ---
 
-<button
-  class="group bg-surface-900 hover:bg-surface-700 grid cursor-pointer grid-cols-[1fr_max-content] items-center justify-center gap-2 rounded-full border-3 border-[#F28C23] px-6 py-3 text-lg transition-all duration-200 ease-in-out hover:border-[#E26002] hover:shadow-xs"
+<a
+  class="group
+  border-accent-500 grid cursor-pointer
+  grid-cols-[1fr_max-content] items-center justify-center gap-0
+   border-b-3 border-l-4 border-r-1 border-t-1 py-3 text-lg transition-transform duration-200 ease-in-out hover:shadow-xs font-bold bg-inverse px-3 hover:-translate-y-[1px] hover:border-b-5 hover:border-l-5"
   {...attributes}
 >
-  <span class="text-inverse text-lg">{text}</span>
-  {
-    Icon && (
-      <Icon
-        size={24}
-        class="text-inverse opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-      />
-    )
-  }
-</button>
+  <span
+    class="bg-wing bg-cover bg-no-repeat stroke-base opacity-0 transition-opacity duration-200 group-hover:opacity-100 w-6 h-6 fill-base"
+  ></span>
+
+  <span class="text-base text-lg">{text}</span>
+</a>
