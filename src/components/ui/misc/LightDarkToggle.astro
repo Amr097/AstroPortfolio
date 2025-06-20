@@ -10,17 +10,18 @@
     aria-label="Currently in light mode. Click to switch to dark mode"
   >
     <div
-      class="absolute inset-0 m-auto h-full w-full -scale-x-100 overflow-hidden transition-all duration-300 backface-hidden"
+      id="fire-icon"
+      class="absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
         src="/fire.svg"
-        class="image-2 h-full w-full rounded-full rounded-l-none"
+        class="image-2 h-full w-full rounded-full -scale-x-100 rounded-l-none"
       />
     </div>
 
     <div
       id="light-icon"
-      class="rotate-y absolute inset-0 m-auto h-full w-full rotate-y-180 overflow-hidden transition-all duration-300 backface-hidden"
+      class="rotate-y-180 absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
         src="/4369.jpg"
@@ -29,6 +30,7 @@
     </div>
 
     <div
+      id="night-icon"
       class="absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden"
     >
       <img
@@ -47,104 +49,6 @@
       />
     </div>
   </button>
-
-  <script>
-    // Type definitions
-    type Theme = 'light' | 'dark';
-
-    // Get current theme
-    function getCurrentTheme(): Theme {
-      const savedTheme = localStorage.getItem('theme') as Theme | null;
-      if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
-        return savedTheme;
-      }
-      // Default to system preference
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    }
-
-    // Update icon visibility based on theme
-    function updateIcon(theme: Theme): void {
-      const lightIcon = document.getElementById('light-icon');
-      const darkIcon = document.getElementById('dark-icon');
-      const toggleBtn = document.getElementById('theme-toggle');
-
-      if (!lightIcon || !darkIcon || !toggleBtn) return;
-
-      const nextTheme = theme === 'light' ? 'dark' : 'light';
-
-      if (theme === 'light') {
-        // Light mode
-        lightIcon.classList.remove('rotate-y-0');
-        lightIcon.classList.add('rotate-y-180');
-        darkIcon.classList.remove('rotate-y-180');
-        darkIcon.classList.add('rotate-y-0');
-      } else {
-        // Dark mode
-        lightIcon.classList.add('rotate-y-0');
-        lightIcon.classList.remove('rotate-y-180');
-        darkIcon.classList.add('rotate-y-180');
-        darkIcon.classList.remove('rotate-y-0');
-      }
-
-      // Update button attributes
-      toggleBtn.setAttribute(
-        'aria-label',
-        `Currently in ${theme} mode. Click to switch to ${nextTheme} mode`
-      );
-    }
-
-    // Set theme and update UI
-    function setTheme(theme: Theme): void {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      updateIcon(theme);
-    }
-
-    // Toggle between themes
-    function toggleTheme(): void {
-      const currentTheme = getCurrentTheme();
-      const newTheme: Theme = currentTheme === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
-    }
-
-    // Initialize theme on page load
-    function initTheme(): void {
-      const currentTheme = getCurrentTheme();
-      setTheme(currentTheme);
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', (): void => {
-      initTheme();
-
-      const toggleBtn = document.getElementById('theme-toggle');
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', toggleTheme);
-      }
-    });
-
-    // Listen for system theme changes (only if user hasn't manually set a theme)
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (e: MediaQueryListEvent): void => {
-        // Only auto-switch if user hasn't manually selected a theme
-        if (!localStorage.getItem('theme')) {
-          const systemTheme: Theme = e.matches ? 'dark' : 'light';
-          setTheme(systemTheme);
-        }
-      });
-
-    // Keyboard support
-    document.addEventListener('keydown', (e: KeyboardEvent): void => {
-      // Toggle theme with Ctrl/Cmd + Shift + L
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'L') {
-        e.preventDefault();
-        toggleTheme();
-      }
-    });
-  </script>
 </div>
 
 <style>

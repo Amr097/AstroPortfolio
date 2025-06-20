@@ -29,10 +29,181 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
     <div class="grid min-h-screen grid-rows-[max-content_1fr_max-content]">
       <PaddingContainer>
         <header class="my-6 flex w-full items-center justify-end gap-4">
-          <!-- <ColorModeSelect /> -->
-          <LightDarkToggle />
         </header>
       </PaddingContainer>
+
+      <script is:inline>
+        function getCurrentTheme() {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
+            return savedTheme;
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+        }
+
+        function setTheme(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          window.theme = theme;
+        }
+
+        function createThemeToggle(initialTheme) {
+          const toggle = document.createElement('div');
+          toggle.className = 'relative';
+          toggle.innerHTML = `
+        <button
+          id="theme-toggle"
+          class="border-accent-800 shadow-accent relative
+          h-12 w-12
+          md:h-14 md:w-14
+          cursor-pointer overflow-hidden rounded-full
+          transition-all duration-300 perspective-dramatic"
+          aria-label="Currently in ${initialTheme} mode. Click to switch to ${
+            initialTheme === 'light' ? 'dark' : 'light'
+          } mode"
+        >
+          <div id="fire-icon" class="absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden">
+            <img src="/fire.svg" class=" image-2 h-full w-full rounded-full -scale-x-100 rounded-l-none" />
+          </div>
+          <div id="light-icon" class="${
+            initialTheme === 'light' ? 'rotate-y-180' : 'rotate-y-0'
+          } absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden">
+            <img src="/4369.jpg" class="image-1 h-full w-full rounded-full rounded-r-none object-cover" />
+          </div>
+          <div id="night-icon" class=" absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden">
+            <img src="/darkness.svg" class="image-2 h-full w-full rounded-full rounded-l-none object-cover" />
+          </div>
+          <div id="dark-icon" class="${
+            initialTheme === 'dark' ? 'rotate-y-180' : 'rotate-y-0'
+          } absolute inset-0 m-auto h-full w-full overflow-hidden transition-all duration-300 backface-hidden">
+            <img src="/4369.jpg" class="image-2 h-full w-full rounded-full rounded-l-none object-cover" />
+          </div>
+        </button>
+      `;
+
+          return toggle;
+        }
+
+        (function initTheme() {
+          const currentTheme = getCurrentTheme();
+          setTheme(currentTheme);
+          // Create and insert toggle
+          const toggle = createThemeToggle(currentTheme);
+          const headerContainer = document.querySelector('header');
+          console.log(headerContainer);
+          if (headerContainer) {
+            headerContainer.appendChild(toggle);
+          }
+        })();
+
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              const systemTheme = e.matches ? 'dark' : 'light';
+              setTheme(systemTheme);
+            }
+          });
+      </script>
+
+      <script is:inline>
+        // Get current theme
+        function getCurrentTheme() {
+          const savedTheme = localStorage.getItem('theme');
+          return savedTheme;
+        }
+
+        // Update icon visibility based on theme
+        function updateIcon(theme) {
+          const lightIcon = document.getElementById('light-icon');
+          const darkIcon = document.getElementById('dark-icon');
+          const toggleBtn = document.getElementById('theme-toggle');
+
+          if (!lightIcon || !darkIcon || !toggleBtn) return;
+
+          const nextTheme = theme === 'light' ? 'dark' : 'light';
+
+          if (theme === 'light') {
+            // Light mode
+            lightIcon.classList.remove('rotate-y-0');
+            lightIcon.classList.add('rotate-y-180');
+            darkIcon.classList.remove('rotate-y-180');
+            darkIcon.classList.add('rotate-y-0');
+          } else {
+            // Dark mode
+            lightIcon.classList.add('rotate-y-0');
+            lightIcon.classList.remove('rotate-y-180');
+            darkIcon.classList.add('rotate-y-180');
+            darkIcon.classList.remove('rotate-y-0');
+          }
+
+          // Update button attributes
+          toggleBtn.setAttribute(
+            'aria-label',
+            `Currently in ${theme} mode. Click to switch to ${nextTheme} mode`
+          );
+        }
+
+        // Set theme and update UI
+        function setTheme(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          updateIcon(theme);
+        }
+
+        // Toggle between themes
+        function toggleTheme() {
+          const currentTheme = getCurrentTheme();
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          setTheme(newTheme);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+          const toggleBtn = document.getElementById('theme-toggle');
+          if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleTheme);
+          }
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+          // Toggle theme with Ctrl/Cmd + Shift + L
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'L') {
+            e.preventDefault();
+            toggleTheme();
+          }
+        });
+
+        // Listen for storage changes
+        window.addEventListener('storage', (e) => {
+          if (e.key === 'theme') {
+            const newTheme = e.newValue;
+            if (newTheme && ['light', 'dark'].includes(newTheme)) {
+              document.documentElement.setAttribute('data-theme', newTheme);
+              updateIcon(newTheme);
+            }
+          }
+        });
+      </script>
+
+      <style is:global>
+        #light-icon,
+        #back-icon {
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .image-1 {
+          clip-path: polygon(0 0, 49% 0, 49% 100%, 0 100%);
+        }
+
+        .image-2 {
+          clip-path: polygon(51% 0, 100% 0%, 100% 99%, 51% 100%);
+        }
+      </style>
+
       <PaddingContainer class="h-full">
         <!-- Main Content -->
         <main class="h-full flex items-center justify-center">
