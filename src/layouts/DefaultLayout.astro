@@ -28,14 +28,14 @@ import PaddingContainer from '../components/ui/containers/PaddingContainer.astro
 
     <div class="grid min-h-screen grid-rows-[max-content_1fr_max-content]">
       <PaddingContainer>
-        <header class="mt-6 flex w-full items-center justify-end gap-4">
+        <header class="my-6 flex w-full items-center justify-end gap-4">
           <!-- <ColorModeSelect /> -->
           <LightDarkToggle />
         </header>
       </PaddingContainer>
       <PaddingContainer class="h-full">
         <!-- Main Content -->
-        <main class="h-full">
+        <main class="h-full flex items-center justify-center">
           <slot />
         </main>
       </PaddingContainer>

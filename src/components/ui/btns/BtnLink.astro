@@ -11,13 +11,29 @@ const { text, icon: Icon, ...attributes } = Astro.props;
 <a
   class="group
   border-accent-500 grid cursor-pointer
-  grid-cols-[1fr_max-content] items-center justify-center gap-0
-   border-b-3 border-l-4 border-r-1 border-t-1 py-3 text-lg transition-transform duration-200 ease-in-out hover:shadow-xs font-bold bg-inverse px-3 hover:-translate-y-[1px] hover:border-b-5 hover:border-l-5"
+  h-[40px] sm:h-[45px] md:h-[50px]
+  w-[90px] sm:w-[120px] md:w-[130px]
+  hover:w-[120px] sm:hover:w-[140px] md:hover:w-[150px]
+  hover:pl-6 sm:hover:pl-7 md:hover:pl-8
+  grid-cols-[1fr_max-content] items-center justify-center gap-1 rounded-lg
+  border-b-2 border-l-3 border-r-1 border-t-1
+  sm:border-b-3 sm:border-l-4
+  hover:border-b-4 hover:border-l-4
+  sm:hover:border-b-5 sm:hover:border-l-5
+  py-2 sm:py-3 px-2 sm:px-3
+  text-base sm:text-lg
+  transition-all duration-200 ease-in-out
+  hover:shadow-xs hover:-translate-y-[1px]
+  font-bold bg-inverse"
   {...attributes}
 >
   <span
-    class="bg-wing bg-cover bg-no-repeat stroke-base opacity-0 transition-opacity duration-200 group-hover:opacity-100 w-6 h-6 fill-base"
+    class="bg-wing bg-cover bg-no-repeat stroke-base opacity-0
+    absolute left-1 sm:left-2
+    w-5 h-5 sm:w-6 sm:h-6
+    fill-base
+    group-hover:delay-100 group-hover:transition-opacity group-hover:duration-200 group-hover:opacity-100"
   ></span>
 
-  <span class="text-base text-lg">{text}</span>
+  <span class="text-base text-[0.75rem] sm:text-lg">{text}</span>
 </a>

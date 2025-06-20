@@ -3,26 +3,14 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
 ---
 
 <div
-  class="col-span-1 col-start-1 flex h-full flex-col items-start justify-start gap-8"
+  class="col-span-1 col-start-1 flex h-full flex-col max-w-max mx-auto lg:mx-0 lg:w-auto items-start justify-start gap-3 sm:gap-6 self-end"
 >
-  <h1
-    class="text-inverse text-start text-4xl leading-20 font-bold md:text-5xl lg:text-6xl xl:text-7xl"
-  >
-    Let me take <span class="text-gradient-accent">control...</span>
-    <br />
-    <span
-      class="text-inverse ml-[1.5ch] inline-block text-start text-4xl leading-20 font-bold md:text-5xl lg:text-6xl"
-      >of your next web project</span
-    >
-  </h1>
-
   <p
-    class="heading-4 text-text-600 mt-6 max-w-[45ch] leading-normal md:text-2xl"
+    class="text-text-600 max-w-[45ch] leading-normal font-medium text-[0.8rem] sm:text-[1rem] md:text-lg lg:text-xl"
   >
-    I Specialize in building pixel-perfect interfaces for clients. <br /> My expertise
-    lies in understanding business requirements (ask, visualize, repeat until everything
-    is clear <strong>enough</strong>) and translating business
-    requirements/figma designs into user-friendly web solutions.
+    Hi, I’m <strong class="text-inverse">Amr</strong> . I help turn ideas into working
+    web solutions by making sure we’re always on the same page from the first conversation
+    to the final result.
   </p>
 
   <div class="flex">
@@ -32,7 +20,7 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
       aria-label="Read more about me"
       role="link"
     />
-    <BtnLink
+    <!-- <BtnLink
       text="Projects"
       href="/about/"
       aria-label="Read more about me"
@@ -43,6 +31,6 @@ import BtnLink from '@/components/ui/btns/BtnLink.astro';
       href="/about/"
       aria-label="Read more about me"
       role="link"
-    />
+    /> -->
   </div>
 </div>

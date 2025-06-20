@@ -1,16 +1,20 @@
 ---
 import '../styles/global.css';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+import HeroTitle from '../features/index/HeroTitle.astro';
 import HeroContent from '../features/index/HeroContent.astro';
 import HeroImage from '../features/index/HeroImage.astro';
 ---
 
 <DefaultLayout>
   <div
-    class="grid h-full grid-cols-1 grid-rows-1 items-center justify-between gap-6 p-2 sm:p-6 md:grid-cols-[1fr_max-content] md:gap-12"
+    class="grid grid-cols-1 grid-rows-[repeat(2,max-content)] items-center justify-center gap-x-0 gap-y-8
+    py-3 sm:py-6
+    md:grid-cols-[1fr_max-content] lg:gap-x-24"
   >
-    <HeroContent />
+    <HeroTitle />
     <HeroImage />
+    <HeroContent />
   </div>
 </DefaultLayout>
 
