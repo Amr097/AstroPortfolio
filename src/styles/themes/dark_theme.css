@@ -145,19 +145,21 @@ E356F6 */
 
     /* Image Filters */
   --invert-color-light-scheme: 100%;
-  --drop-shadow-light-scheme: 0.2rem 0 0.5rem rgb(250,210,251, 1);
+  --drop-shadow-light-scheme: 0.01rem 0rem 0rem rgb(250,210,251, 0.5);
   --hue-rotate-light-scheme: 180deg;
 
-  --invert-color-dark-scheme: 0;
-  --drop-shadow-dark-scheme: 0.2rem 0 0.2rem rgb(255, 255, 255, 0.75);
-  --hue-rotate-dark-scheme: 0deg;
+  --invert-color-dark-scheme: 0%;
+  --drop-shadow-dark-scheme: 0.2rem 0 0.2rem rgb(255, 255, 255, 0.35);
+  --hue-rotate-dark-scheme: 0;
   --sepia-filter-scheme: 0;
 
-  --hero-light-translate-y: 4.5px;
+  --hero-light-translate-y: 3px;
+  --transition-duration: 300ms;
   --hero-dark-translate-y: 0;
 
-  --hero-image-light: rgba(255, 255, 255, 1);
-  --hero-image-dark: rgba(0, 0, 0, 0);
+  --hero-image-light: rgba(248, 250, 252, 0);
+  --hero-image-dark: rgba(255, 255, 255, 0.0);
+
 
     /* Shadows */
 --shadow-accent: -1.5px 0.15px 5px 1px rgba(116, 2, 140, 0.2),

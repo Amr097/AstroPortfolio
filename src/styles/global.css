@@ -116,6 +116,7 @@
   --hue-rotate-dark-scheme: var(--hue-rotate-dark-scheme);
   --gradient-accent: var(--gradient-accent);
   --sepia-filter-scheme: var(--sepia-filter-scheme);
+  --transition-duration-image: var(--transition-duration);
   
   --translate-hero-light: var(--hero-light-translate-y);
   --translate-hero-dark: var(--hero-dark-translate-y);
