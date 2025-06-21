@@ -1,0 +1,89 @@
+---
+interface Props {
+  text: string;
+  icon?: string;
+  ribbon?: boolean;
+  ribbonText?: string;
+}
+
+const {
+  text,
+  icon,
+  ribbon = false,
+  ribbonText = 'WIP',
+} = Astro.props;
+---
+
+
+  {
+    icon && (
+      <>
+        <span
+          set:html={icon}
+          class="w-34 h-34 left-1/2 -top-4 -rotate-10 fill-[#272525] stroke-accent-300 absolute -translate-x-1/2"
+          style="--stroke-color: var(--color-accent-500);"
+        />
+        <span
+          set:html={icon}
+          class="w-36 h-36 right-1/2 -top-8 fill-[#272525] stroke-accent-300 absolute rotate-90 translate-x-1/2"
+          style="--stroke-color: var(--color-accent-500);"
+        />
+      </>
+    )
+  }
+
+  <h2 class="text-inverse heading-4">{text}</h2>
+
+  {
+    ribbon && (
+      <div class="ribbon-wrapper">
+        <div class="ribbon-cs">{ribbonText}</div>
+      </div>
+    )
+  }
+
+
+<style>
+    .ribbon-wrapper {
+      width: 85px;
+      height: 88px;
+      overflow: hidden;
+      position: absolute;
+      top: -3px;
+      right: -3px;
+    }
+    
+    .ribbon-cs {
+      font:  1em Sans-Serif;
+      color: var(--color-inverse);
+      text-align: center;
+      -webkit-transform: rotate(45deg);
+      -moz-transform:    rotate(45deg);
+      -ms-transform:     rotate(45deg);
+      -o-transform:      rotate(45deg);
+      position: relative;
+      padding: 7px 0;
+      left: -5px;
+      top: 15px;
+      width: 120px;
+      background-color: var(--color-accent-300);
+      
+    }
+    
+    .ribbon-cs:before, .ribbon-cs:after {
+      content: "";
+      border-top:   3px solid var(--color-accent-300);   
+      border-left:  3px solid transparent;
+      border-right: 3px solid transparent;
+      position:absolute;
+      bottom: -3px;
+    }
+    
+    .ribbon-cs:before {
+      left: 0;
+    }
+    .ribbon-cs:after {
+      right: 0;
+    }​
+    </style>
+    

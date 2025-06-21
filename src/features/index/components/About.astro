@@ -1,7 +1,6 @@
 ---
-import SocialButton from '@/components/ui/btns/SocialButton.astro';
 import AngelComponent from '@/components/ui/misc/AngelComponent.astro';
-import { GithubIcon, Linkedin, Download } from '@lucide/astro';
+import SocialButtons from './About/SocialButtons.astro';
 ---
 
 <section class="flex flex-col items-center gap-6 md:flex-row" tabindex="0">
@@ -27,51 +26,7 @@ import { GithubIcon, Linkedin, Download } from '@lucide/astro';
       </p>
     </div>
 
-    <nav
-      aria-label="Social media profiles and contact links"
-      class="flex flex-wrap items-center gap-2"
-      role="navigation"
-    >
-      <h3 class="sr-only">Connect with me on social media</h3>
-      <SocialButton
-        href="https://github.com/Amr097"
-        label="GitHub Profile"
-        aria-label="Visit Amr Abdelghany's GitHub profile to view code repositories and projects, opens in new tab"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <GithubIcon size={20} class="text-inverse" aria-hidden="true" />
-        <span class="sr-only">GitHub</span>
-      </SocialButton>
-      <SocialButton
-        href="https://www.linkedin.com/in/amrabdelghany/"
-        label="LinkedIn Profile"
-        aria-label="Visit Amr Abdelghany's LinkedIn profile for professional background and connections, opens in new tab"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <Linkedin size={20} class="text-inverse" aria-hidden="true" />
-        <span class="sr-only">LinkedIn</span>
-      </SocialButton>
-
-      <a
-        href="https://drive.google.com/uc?export=download&id=1QE_RF75OjQggX6NNLPtOZwIa4hOdetPl"
-        download="Amr_Abdelghany_Resume.pdf"
-        class="bg-surface-900 border-border-900
-        hover:border-border-300 hover:bg-surface-700
-        focus:ring-accent-500 focus:ring-offset-surface-50 inline-flex
-        items-center gap-2 rounded-full border px-3 py-2
-        transition-all duration-200 ease-in-out hover:scale-x-100 hover:shadow-xs
-        focus:ring-2 focus:ring-offset-2 focus:outline-none"
-        aria-label="Download Amr Abdelghany's resume as PDF file"
-        role="button"
-        tabindex="0"
-      >
-        <span class="text-inverse label" aria-hidden="true">Resume</span>
-        <Download size={15} class="text-inverse" aria-hidden="true" />
-        <span class="sr-only">Download resume PDF</span>
-      </a>
-    </nav>
+    <SocialButtons />
 
     <AngelComponent />
   </div>

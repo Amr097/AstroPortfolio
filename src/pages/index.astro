@@ -7,7 +7,8 @@ import About from '../features/index/components/About.astro';
 import Technologies from '../features/index/components/Technologies.astro';
 import Services from '../features/index/components/Services.astro';
 import Experience from '../features/index/components/Expereince/Experience.astro';
-import Contact from '../features/index/components/Contact/Contact.astro';
+import WorkInProgressBtn from '@/components/ui/btns/WorkInProgressBtn.astro';
+import ChainIcon from '/chain-icon.svg?raw';
 ---
 
 <DefaultLayout>
@@ -28,14 +29,36 @@ import Contact from '../features/index/components/Contact/Contact.astro';
 
         <!-- Tech Stack Card -->
     
-          <CardContainer class="col-start-1 col-span-1 row-start-2 row-span-1">
+          <CardContainer class="col-start-1 col-span-1 row-start-2 row-span-1 w-max">
             <Technologies />
           </CardContainer>
 
-         <div class="col-start-2 col-span-1 w-50 grid grid-rows-3">
-          <div class="w-full  bg-blue-600"></div>
-          <div class="w-full  bg-green-600"></div>
-          <div class="w-full  bg-red-600"></div>
+         <div class="col-start-2 col-span-1 w-80 grid grid-rows-3 gap-4">
+        
+        <CardContainer class="row-start-1 row-span-1">
+          <Experience/>
+         </CardContainer>
+
+
+         <CardContainer  class='row-span-1 row-start-2 relative overflow-hidden cursor-not-allowed'>
+          <WorkInProgressBtn 
+          text="Projects" 
+          icon={ChainIcon} 
+          ribbon={true} 
+          ribbonText="WIP" 
+        />
+
+
+        </CardContainer>
+          <CardContainer  class='row-span-1 row-start-3 relative overflow-hidden cursor-not-allowed'>
+            <WorkInProgressBtn 
+            text="Projects" 
+            icon={ChainIcon} 
+            ribbon={true} 
+            ribbonText="WIP" 
+          />
+
+        </CardContainer>
          </div>
 
        

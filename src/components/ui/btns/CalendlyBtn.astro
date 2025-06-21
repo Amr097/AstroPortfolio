@@ -5,7 +5,12 @@ import { Calendar } from '@lucide/astro';
 const calendlyUrl = 'https://calendly.com/amr-abdelghany097';
 ---
 
-<DefaultBtn text="Schedule a call" icon={Calendar} id="calendly-btn" />
+<DefaultBtn
+  text="Schedule a call"
+  icon={Calendar}
+  id="calendly-btn"
+  title="Book one to one meeting"
+/>
 
 <script define:vars={{ calendlyUrl }} defer>
   const loadCalendlyAssets = () => {
