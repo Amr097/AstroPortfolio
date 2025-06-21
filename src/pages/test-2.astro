@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import HeroTitle from '../features/index/HeroTitle.astro';
+import HeroContent from '../features/index/HeroContent.astro';
+import HeroImage from '../features/index/HeroImage.astro';
+---
+
+<DefaultLayout>
+  <div
+    class="grid grid-cols-1 grid-rows-[repeat(2,max-content)] items-center justify-center gap-x-0 gap-y-8
+    py-3 sm:py-6
+    md:grid-cols-[1fr_max-content] lg:gap-x-24 lg:px-12"
+  >
+    <HeroTitle />
+    <HeroImage />
+    <HeroContent />
+  </div>
+</DefaultLayout>
+
+<style>
+  .float-animation {
+    /* animation: float 4s ease-in-out infinite; */
+  }
+
+  .float-moon-animation {
+    /* animation: float-moon 4s ease-in-out infinite; */
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(-0, 0);
+    }
+    50% {
+      transform: translate(0, -2.5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes float-moon {
+    0% {
+      transform: translate(-0, -2.5%);
+    }
+    50% {
+      transform: translate(0, -5%);
+    }
+    100% {
+      transform: translate(0, -2.5%);
+    }
+  }
+</style>
